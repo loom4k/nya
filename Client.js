@@ -1,5 +1,6 @@
 // Importing dependencies
 const { Client, Collection } = require('discord.js')
+const Discord = require('discord.js')
 const Util = require('./structures/Util')
 const config = require('./config.json')
 const logger = require('./utils/logger')
@@ -13,21 +14,17 @@ module.exports = class WaveClient extends Client {
             fetchAllMembers: true,
             disableMentions: 'everyone',
             shardCount: 1,
-            ws: {
-                intents: [
-                "GUILDS",
-                "GUILD_MEMBERS",
-                "GUILD_MESSAGES",
-                "GUILD_EMOJIS",
-                'GUILD_MESSAGE_REACTIONS',
-                'GUILD_VOICE_STATES'
-                ],
-              },
+            intents: [
+                Discord.Intents.FLAGS.GUILDS,
+                Discord.Intents.FLAGS.GUILD_MESSAGES,
+                Discord.Intents.FLAGS.GUILD_MEMBERS,
+                Discord.Intents.FLAGS.GUILDS
+            ],
         })
 
         this.validate(options)
         this.partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER'],
-        this.commands = new Collection()
+            this.commands = new Collection()
         this.events = new Collection()
         this.utils = require('./utils/utils')
         this.mongoose = require('./utils/mongoose')
@@ -36,12 +33,12 @@ module.exports = class WaveClient extends Client {
     }
 
     validate(options) {
-        if(typeof options !== 'object') throw new TypeError('Options should be a type of Object.')
+        if (typeof options !== 'object') throw new TypeError('Options should be a type of Object.')
 
-        if(!token) throw new Error('You must pass in the token for the client.')
+        if (!token) throw new Error('You must pass in the token for the client.')
         this.token = token
 
-        if(!options.mongodb_url) throw new Error('You must pass in the MongoDB Url for the client.')
+        if (!options.mongodb_url) throw new Error('You must pass in the MongoDB Url for the client.')
     }
 
     async start(token = this.token) {
@@ -51,6 +48,6 @@ module.exports = class WaveClient extends Client {
         .catch(e => console.log(e))
 
         this.mongoose.init()
-            this.login(this.token)
+        this.login(this.token)
     }
 }

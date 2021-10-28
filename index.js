@@ -1,6 +1,5 @@
 const WaveClient = require('./Client.js')
 const config = require('./config.json')
-const domain = require('./config.js')
 
 const Wave = new WaveClient(config)
 
