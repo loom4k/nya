@@ -23,8 +23,8 @@ module.exports = class WaveClient extends Client {
         })
 
         this.validate(options)
-        this.partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER'],
-            this.commands = new Collection()
+        this.partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER']
+        this.commands = new Collection()
         this.events = new Collection()
         this.utils = require('./utils/utils')
         this.mongoose = require('./utils/mongoose')
