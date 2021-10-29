@@ -13,6 +13,9 @@ module.exports = {
 
         if (!config.mongodb_url) logger.error(`Database failed to load - Required environnement variable "mongodb_url" is not set.`, { label: 'Database' })
         mongoose.connect(mongodb, dbOptions)
+            .then(() => {
+                logger.info('Server connected to the MongoDB Database', { label: 'Database' })
+            })
             .catch(e => {
                 logger.error(e.message, { label: 'Database' })
                 this.database = null

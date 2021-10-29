@@ -1,7 +1,8 @@
 const Event = require('../structures/Event')
+const logger = require('../utils/logger')
 
 module.exports = class extends Event {
     async run() {
-        console.log(`Logged in as ${this.client.user.tag}`)
+        logger.info(`Logged in as ${this.client.user.tag}`, { label: 'Discord API' })
     }
 }

@@ -6,7 +6,7 @@ module.exports = class Command {
         this.name = options.name || name
         this.description = options.description || 'A discord slash command.'
         this.disabled = options.disabled || false
-        this.botPermission = option.botPermission || ['ADMINISTRATOR']
+        this.botPermission = options.botPermission || ['ADMINISTRATOR']
         this.userPermission = options.userPermission || null
     }
 

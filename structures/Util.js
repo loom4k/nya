@@ -52,21 +52,6 @@ module.exports = class Util {
         }
     }
 
-    async loadCommands() {
-        let success = 0
-        let failed = 0
-
-        for await (const commandFile of this.loadFiles(`${this.directory}commands`)) {
-            delete require.cache[commandFile]
-            const { name } = path.parse(commandFile)
-            const File = require(commandFile)
-            if (!this.isClass(File)) throw new TypeError(`Command ${name} doesn't export any class.`)
-            const command = new File(this.client, name.toLowerCase())
-            if (!(command instanceof Command)) throw new TypeError(`Command ${name} doesn't belong in the Commands.`)
-            this.client.commands.set(command.name, command)
-        }
-    }
-
     async loadEvents() {
         for await (const eventFile of this.loadFiles(`${this.directory}events`)) {
             delete require.cache[eventFile]

@@ -42,12 +42,11 @@ module.exports = class WaveClient extends Client {
     }
 
     async start(token = this.token) {
-        this.utils.loadCommands()
         this.utils.loadEvents()
 
         .catch(e => console.log(e))
 
         this.mongoose.init()
-        this.login(this.token)
+        this.login(token)
     }
 }
