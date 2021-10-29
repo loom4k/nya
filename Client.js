@@ -5,6 +5,7 @@ const Util = require('./structures/Util')
 const config = require('./config.json')
 const logger = require('./utils/logger')
 const { token } = require('./utils/variables')
+const Chatbot = require("discord-chatbot");
 
 module.exports = class WaveClient extends Client {
     constructor(options = {}, senty) {
@@ -24,12 +25,13 @@ module.exports = class WaveClient extends Client {
 
         this.validate(options)
         this.partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER']
-        this.commands = new Collection()
+        this.slashCommands = new Collection()
         this.events = new Collection()
         this.utils = require('./utils/utils')
-        this.mongoose = require('./utils/mongoose')
         this.utils = new Util(this)
         this.config = require('./config.json')
+        this.Database = require('./database/mongoose')
+        this.Chatbot = new Chatbot({ name: "Wave", gender: "female" })
     }
 
     validate(options) {
@@ -46,7 +48,7 @@ module.exports = class WaveClient extends Client {
 
         .catch(e => console.log(e))
 
-        this.mongoose.init()
+        this.Database.init()
         this.login(token)
     }
 }

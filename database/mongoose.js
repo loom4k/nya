@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const config = require('./../config.json')
-const { mongodb } = require('./variables')
-const logger = require('./logger')
+const { mongodb } = require('../utils/variables')
+const guildSchema = require('./schemas/Guild')
+const logger = require('../utils/logger')
 
 module.exports = {
     init: () => {
@@ -30,5 +31,21 @@ module.exports = {
         mongoose.connection.on('disconnected', () => {
             logger.error(`Mongoose connection lost`, { label: 'Database' })
         })
+    }
+}
+
+module.exports.fetchGuild = async function(key) {
+    let guildDB = await guildSchema.findOne({ id: key })
+
+    if(guildDB) {
+        return guildDB
+    } else {
+        guildDB = new guildSchema({
+            id: key,
+            registeredAt: Date.now(),
+            lang: 'en',
+        })
+        await guildDB.save().catch(err => console.log(err))
+        return guildDB
     }
 }

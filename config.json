@@ -1,4 +1,6 @@
 {
     "main_token": "ODk0NzI5Mjg4MzM3NzMxNjQ1.YVuPlQ.M4JEJ1g91t49lRPQxv-Ih7G3rG0",
-    "mongodb_url": "mongodb://admin:douw*FUH3sked!yeec@maincluster-shard-00-00.0xpma.mongodb.net:27017,maincluster-shard-00-01.0xpma.mongodb.net:27017,maincluster-shard-00-02.0xpma.mongodb.net:27017/Wave?ssl=true&replicaSet=atlas-gcms8l-shard-0&authSource=admin&retryWrites=true&w=majority"
+    "mongodb_url": "mongodb://admin:douw*FUH3sked!yeec@maincluster-shard-00-00.0xpma.mongodb.net:27017,maincluster-shard-00-01.0xpma.mongodb.net:27017,maincluster-shard-00-02.0xpma.mongodb.net:27017/Wave?ssl=true&replicaSet=atlas-gcms8l-shard-0&authSource=admin&retryWrites=true&w=majority",
+    "guild_id": "846483256479318046",
+    "version": "0.0.1"
 }

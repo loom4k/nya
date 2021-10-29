@@ -1,19 +1,28 @@
 const Event = require('../structures/Event')
 const logger = require('../utils/logger')
-const ping = require('../commands/ping')
 
 module.exports = class extends Event {
     async run(interaction) {
-        if (!interaction.isCommand()) return;
+        if (interaction.isCommand()) {
+            await interaction.deferReply({ ephemeral: false }).catch(() => {})
+        }
 
-        await ping.run(interaction)
+        this.runCommand(interaction)
     }
 
     async runCommand(interaction) {
-        const cmd = interaction.name
-        const command = await this.client.commands.get(cmd)
-        logger.info(`${interaction.name} command ran.`)
+        let guildData = await this.client.Database.fetchGuild(interaction.guild.id)
+        let langData = require(`../data/languages/${guildData.lang}.json`)
 
-        await command.run(interaction)
+        let data = {}
+        data.guild = guildData
+        data.lang = langData
+        const cmd = this.client.slashCommands.get(interaction.commandName)
+        try {
+            cmd.run(this.client, interaction, data).catch(e => {})
+        } catch(error) {
+            logger.error(error, { label: 'Error' })
+            return interaction.reply({ content: data.lang.error, ephemeral: true })
+        }
     }
 }
