@@ -13,7 +13,6 @@ module.exports = class extends Event {
     async runCommand(interaction) {
         let guildData = await this.client.Database.fetchGuild(interaction.guild.id)
         let langData = require(`../data/languages/${guildData.lang}.json`)
-        let userCount = await this.getUserCount()
 
         let data = {}
         data.guild = guildData

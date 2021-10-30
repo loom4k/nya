@@ -12,7 +12,7 @@ module.exports = {
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-    run: async(client, interaction, args) => {
+    run: async(client, interaction, data) => {
         const version = config.version
         let ram = ((process.memoryUsage().heapUsed / 1024 / 1024) + (process.memoryUsage().heapTotal / 1024 / 1024)).toFixed(2);
         let embed = {
@@ -22,31 +22,31 @@ module.exports = {
                 icon_url: client.user.displayAvatarURL()
             },
             fields: [{
-                    name: 'Developers',
+                    name: data.lang.bot_stats.developers,
                     value: '```loom4k#0001```',
                 },
                 {
-                    name: 'Channels',
+                    name: data.lang.bot_stats.channels,
                     value: `\`\`\`${client.channels.cache.size}\`\`\``,
                     inline: true,
                 },
                 {
-                    name: 'Users',
+                    name: data.lang.bot_stats.users,
                     value: `\`\`\`${client.users.cache.size}\`\`\``,
                     inline: true,
                 },
                 {
-                    name: 'Guilds',
+                    name: data.lang.bot_stats.guilds,
                     value: `\`\`\`${client.guilds.cache.size}\`\`\``,
                     inline: true,
                 },
                 {
-                    name: 'RAM usage',
+                    name: data.lang.bot_stats.ram,
                     value: `\`\`\`${ram}MB\`\`\``,
                     inline: true,
                 },
                 {
-                    name: 'API latency',
+                    name: data.lang.bot_stats.api,
                     value: `\`\`\`${client.ws.ping} ms\`\`\``,
                     inline: true,
                 },

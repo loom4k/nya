@@ -5,7 +5,7 @@ module.exports = {
     description: "Talk to a bot that can't understand you",
     options: [{
         name: "message",
-        description: "Tell me what you want",
+        description: "The message you want me to answer",
         type: "STRING",
         required: true
     }],
@@ -17,10 +17,10 @@ module.exports = {
 
             const response = await client.Chatbot.chat(question)
 
-            const embed = new MessageEmbed()
-                .setDescription(`**${user.tag}:** ${question}\n**${client.user.tag}:** ${response}`)
+            interaction.followUp({ content: `**${user.tag}** > ${question}\n**Wave** > ${response}` })
 
-            interaction.followUp({ embeds: [embed] })
+            const hintChances = Math.round(Math.random() * 100)
+            if (hintChances <= 10) interaction.followUp({ content: "The chatbot responses aren't being translated to the guild language, [learn more...](https://soon.com)", ephemeral: true })
         } catch (err) {
             console.log(err)
         }
