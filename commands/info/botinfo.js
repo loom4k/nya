@@ -12,7 +12,7 @@ module.exports = {
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-    run: async (client, interaction, args) => {
+    run: async(client, interaction, args) => {
         const version = config.version
         let ram = ((process.memoryUsage().heapUsed / 1024 / 1024) + (process.memoryUsage().heapTotal / 1024 / 1024)).toFixed(2);
         let embed = {
@@ -21,8 +21,7 @@ module.exports = {
                 name: client.user.username,
                 icon_url: client.user.displayAvatarURL()
             },
-            fields: [
-                {
+            fields: [{
                     name: 'Developers',
                     value: '```loom4k#0001```',
                 },
@@ -61,7 +60,7 @@ module.exports = {
                 url: client.user.displayAvatarURL(),
             },
         }
-            
+
         interaction.followUp({ embeds: [embed] });
     },
 };

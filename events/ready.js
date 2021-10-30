@@ -9,21 +9,21 @@ const globPromise = promisify(glob)
 module.exports = class extends Event {
     async run() {
         // Slash Commands
-    const slashCommands = await globPromise(
-        `${process.cwd()}/commands/*/*.js`
-    );
+        const slashCommands = await globPromise(
+            `${process.cwd()}/commands/*/*.js`
+        );
 
-    const arrayOfSlashCommands = [];
-    slashCommands.map((value) => {
-        const file = require(value);
-        if (!file?.name) return;
-        this.client.slashCommands.set(file.name, file);
+        const arrayOfSlashCommands = [];
+        slashCommands.map((value) => {
+            const file = require(value);
+            if (!file.name) return;
+            this.client.slashCommands.set(file.name, file);
 
-        if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
-        if(file.userPermissions) file.defaultPermission = false;
-        arrayOfSlashCommands.push(file);
-        logger.info(`Loaded commands ${file.name}`, { label: 'Commands' })
-    });
+            if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
+            if (file.userPermissions) file.defaultPermission = false;
+            arrayOfSlashCommands.push(file);
+            logger.info(`Loaded commands ${file.name}`, { label: 'Commands' })
+        });
 
         // Register for a single guild
         const guild = this.client.guilds.cache.get(config.guild_id)
@@ -31,33 +31,33 @@ module.exports = class extends Event {
             const getRoles = (commandName) => {
                 const permissions = arrayOfSlashCommands.find(x => x.name === commandName).userPermissions
 
-                if(!permissions) return null;
+                if (!permissions) return null;
                 return guild.roles.cache.filter(x => x.permissions.has(permissions) && !x.managed)
             }
 
-        const fullPermissions = cmd.reduce((accumulator, x) => {
-            const roles = getRoles(x.name)
-            if(!roles) return accumulator;
+            const fullPermissions = cmd.reduce((accumulator, x) => {
+                const roles = getRoles(x.name)
+                if (!roles) return accumulator;
 
-            const permissions = roles.reduce((a, v) => {
+                const permissions = roles.reduce((a, v) => {
+                    return [
+                        ...a,
+                        {
+                            id: v.id,
+                            type: "ROLE",
+                            permission: true
+                        }
+                    ]
+                }, [])
                 return [
-                    ...a,
+                    ...accumulator,
                     {
-                        id: v.id,
-                        type: "ROLE",
-                        permission: true
+                        id: x.id,
+                        permissions
                     }
                 ]
             }, [])
-            return [
-                ...accumulator,
-                {
-                    id: x.id,
-                    permissions
-                }
-            ]
-        }, [])
-        guild.commands.permissions.set({ fullPermissions })
+            guild.commands.permissions.set({ fullPermissions })
         });
 
         const activities = [
@@ -65,7 +65,7 @@ module.exports = class extends Event {
             { name: 'development', type: 'WATCHING' }
         ]
 
-        await this.client.user.setPresence({ status: 'online', activity: activities[0] })
+        await this.client.user.setPresence({ status: 'online', activity: { name: `${this.client.guilds.cache.size} guilds`, type: 'WATCHING' } })
         logger.info(`Set client presence`, { label: 'Client' })
         logger.info(`Logged in as ${this.client.user.tag}`, { label: 'Discord API' })
     }

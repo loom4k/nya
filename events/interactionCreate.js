@@ -13,6 +13,7 @@ module.exports = class extends Event {
     async runCommand(interaction) {
         let guildData = await this.client.Database.fetchGuild(interaction.guild.id)
         let langData = require(`../data/languages/${guildData.lang}.json`)
+        let userCount = await this.getUserCount()
 
         let data = {}
         data.guild = guildData
@@ -20,7 +21,7 @@ module.exports = class extends Event {
         const cmd = this.client.slashCommands.get(interaction.commandName)
         try {
             cmd.run(this.client, interaction, data).catch(e => {})
-        } catch(error) {
+        } catch (error) {
             logger.error(error, { label: 'Error' })
             return interaction.reply({ content: data.lang.error, ephemeral: true })
         }
