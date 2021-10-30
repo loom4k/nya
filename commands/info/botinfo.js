@@ -4,7 +4,7 @@ const config = require('../../config.json')
 
 module.exports = {
     name: "botinfo",
-    description: "Returns information and stats about Wave",
+    description: "Returns information and stats about Nya",
     type: 'CHAT_INPUT',
     /**
      *

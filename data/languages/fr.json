@@ -13,5 +13,9 @@
     "economy": {
         "cod": "poissons",
         "worked": "Tu as travailler une heure à ton restaurant et a amassé"
+    },
+    "restaurant": {
+        "new_name": "Le nouveau nom de ton restaurant est",
+        "new_cook": "Ton nouveau nom de chef est"
     }
 }

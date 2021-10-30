@@ -1,17 +1,17 @@
-const WaveClient = require('./Client.js')
+const NyaClient = require('./Client.js')
 const config = require('./config.json')
 
-const Wave = new WaveClient(config)
+const Nya = new NyaClient(config)
 
 const color = require('./data/colors')
 const emoji = require('./data/emoji.js')
 
-Wave.color = color
-Wave.emoji = emoji
+Nya.color = color
+Nya.emoji = emoji
 
-let client = Wave
+let client = Nya
 
-Wave.react = new Map()
-Wave.fetchforguild = new Map()
+Nya.react = new Map()
+Nya.fetchforguild = new Map()
 
-Wave.start()
+Nya.start()

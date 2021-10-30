@@ -29,7 +29,7 @@ const logger = createLogger({
     ),
     transports: [
         new transports.Console(),
-        new transports.File({ filename: './assets/logs/Wave.log' })
+        new transports.File({ filename: './assets/logs/Nya.log' })
     ]
 })
 

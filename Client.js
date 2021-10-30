@@ -7,7 +7,7 @@ const logger = require('./utils/logger')
 const { token } = require('./utils/variables')
 const Chatbot = require("discord-chatbot");
 
-module.exports = class WaveClient extends Client {
+module.exports = class NyaClient extends Client {
     constructor(options = {}, senty) {
         super({
             partials: ['MESSAGE', 'CHANNEL', 'GUILD_MEMBER', 'REACTION', 'USER'],
@@ -32,7 +32,7 @@ module.exports = class WaveClient extends Client {
         this.config = require('./config.json')
         this.emoji = require('./data/emoji')
         this.Database = require('./database/mongoose')
-        this.Chatbot = new Chatbot({ name: "Wave", gender: "female" })
+        this.Chatbot = new Chatbot({ name: "Nya", gender: "female" })
     }
 
     validate(options) {

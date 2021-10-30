@@ -17,7 +17,7 @@ module.exports = {
 
             const response = await client.Chatbot.chat(question)
 
-            interaction.followUp({ content: `**${user.tag}** > ${question}\n**Wave** > ${response}` })
+            interaction.followUp({ content: `**${user.tag}** > ${question}\n**Nya** > ${response}` })
 
             const hintChances = Math.round(Math.random() * 100)
             if (hintChances <= 10) interaction.followUp({ content: "The chatbot responses aren't being translated to the guild language, [learn more...](https://soon.com)", ephemeral: true })

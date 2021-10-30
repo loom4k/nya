@@ -13,5 +13,9 @@
     "economy": {
         "cod": "cods",
         "worked": "You worked an hour at your restaurant and made"
+    },
+    "restaurant": {
+        "new_name": "The new name of your restaurant is",
+        "new_cook": "Your new cook name is"
     }
 }
