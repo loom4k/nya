@@ -12,10 +12,12 @@ module.exports = class extends Event {
 
     async runCommand(interaction) {
         let guildData = await this.client.Database.fetchGuild(interaction.guild.id)
+        let userData = await this.client.Database.fetchUser(interaction.member.id)
         let langData = require(`../data/languages/${guildData.lang}.json`)
 
         let data = {}
         data.guild = guildData
+        data.user = userData
         data.lang = langData
         const cmd = this.client.slashCommands.get(interaction.commandName)
         try {

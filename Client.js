@@ -30,6 +30,7 @@ module.exports = class WaveClient extends Client {
         this.utils = require('./utils/utils')
         this.utils = new Util(this)
         this.config = require('./config.json')
+        this.emoji = require('./data/emoji')
         this.Database = require('./database/mongoose')
         this.Chatbot = new Chatbot({ name: "Wave", gender: "female" })
     }

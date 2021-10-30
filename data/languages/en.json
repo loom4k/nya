@@ -9,5 +9,9 @@
         "guilds": "Guilds",
         "ram": "RAM Usage",
         "api": "API Latency"
+    },
+    "economy": {
+        "cod": "cods",
+        "worked": "You worked an hour at your restaurant and made"
     }
 }

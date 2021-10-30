@@ -9,5 +9,9 @@
         "guilds": "Serveurs",
         "ram": "Utilisation de RAM",
         "api": "Latence de l'API"
+    },
+    "economy": {
+        "cod": "poissons",
+        "worked": "Tu as travailler une heure à ton restaurant et a amassé"
     }
 }

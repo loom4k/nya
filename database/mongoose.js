@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const config = require('./../config.json')
 const { mongodb } = require('../utils/variables')
 const guildSchema = require('./schemas/Guild')
+const userSchema = require('./schemas/User')
 const logger = require('../utils/logger')
 
 module.exports = {
@@ -37,7 +38,7 @@ module.exports = {
 module.exports.fetchGuild = async function(key) {
     let guildDB = await guildSchema.findOne({ id: key })
 
-    if(guildDB) {
+    if (guildDB) {
         return guildDB
     } else {
         guildDB = new guildSchema({
@@ -47,5 +48,20 @@ module.exports.fetchGuild = async function(key) {
         })
         await guildDB.save().catch(err => console.log(err))
         return guildDB
+    }
+}
+
+module.exports.fetchUser = async function(key) {
+    let userDB = await userSchema.findOne({ id: key })
+
+    if (userDB) {
+        return userDB
+    } else {
+        userDB = new userSchema({
+            id: key,
+            registeredAt: Date.now(),
+        })
+        await userDB.save().catch(err => console.log(err))
+        return userDB
     }
 }

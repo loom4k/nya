@@ -10,8 +10,7 @@ module.exports = {
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
-    run: async (client, interaction, data) => {
+    run: async(client, interaction, data) => {
         interaction.editReply({ content: `${data.lang.ping_message} ${client.ws.ping}ms.`, ephemeral: true })
-        console.log(database.fetchUser())
     },
 };
