@@ -3,10 +3,10 @@ let token
 let mongodb
 
 if (config.dev) {
-    token = config.main_token
+    token = process.env.TOKEN
     mongodb = config.mongodb_url
 } else if (!config.dev) {
-    token = config.main_token
+    token = process.env.TOKEN
     mongodb = config.mongodb_url
 }
 

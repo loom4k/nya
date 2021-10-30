@@ -1,7 +1,8 @@
 const { SlashCommandBuilder, SlashCommandStringOption } = require('@discordjs/builders');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { clientId, main_token } = require('./config.json');
+const { clientId } = require('./config.json');
+const { token } = require('./utils/variables')
 
 const commands = [
         new SlashCommandBuilder().setName('chatbot').setDescription('Talk to a bot that can\'t understand you. (Global command)').addStringOption(option =>
@@ -12,7 +13,7 @@ const commands = [
     ]
     .map(command => command.toJSON());
 
-const rest = new REST({ version: '9' }).setToken(main_token);
+const rest = new REST({ version: '9' }).setToken(token);
 
 rest.put(Routes.applicationCommands("894729288337731645"), { body: commands })
     .then(() => console.log('Successfully registered application commands.'))
