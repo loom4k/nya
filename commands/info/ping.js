@@ -4,6 +4,7 @@ module.exports = {
     name: "ping",
     description: "Returns my websocket ping!",
     type: 'CHAT_INPUT',
+    cooldown: 15,
     /**
      *
      * @param {Client} client
@@ -11,6 +12,6 @@ module.exports = {
      * @param {String[]} args
      */
     run: async(client, interaction, data) => {
-        interaction.editReply({ content: `${data.lang.ping_message} ${client.ws.ping}ms.`, ephemeral: true })
+        interaction.followUp({ content: `${data.lang.ping_message} ${client.ws.ping}ms.` })
     },
 };

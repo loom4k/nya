@@ -34,6 +34,7 @@ module.exports = {
                 })
                 .setThumbnail(interaction.user.displayAvatarURL())
                 .setAuthor(client.user.tag, client.user.avatarURL())
+                .setColor(client.colors.greeny)
             interaction.editReply({ embeds: [embed] })
         } catch (e) {
             console.log(e)

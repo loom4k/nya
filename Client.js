@@ -31,6 +31,8 @@ module.exports = class NyaClient extends Client {
         this.utils = new Util(this)
         this.config = require('./config.json')
         this.emoji = require('./data/emoji')
+        this.colors = require('./data/colors')
+        this.Timeout = new Collection()
         this.Database = require('./database/mongoose')
         this.Chatbot = new Chatbot({ name: "Nya", gender: "female" })
     }

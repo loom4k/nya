@@ -2,6 +2,8 @@
     "error": "Une erreur est survenue lors de l'exécution de cette commande. Veuillez réessayer plus tard.",
     "new_language": "La langue de ce serveur est maintenant définie comme",
     "ping_message": "Le ping du client est de",
+    "on_cooldown": "Cette commande est sur cooldown!",
+    "ready_in": "Tu pourras la réutiliser dans",
     "bot_stats": {
         "developers": "Développeurs",
         "channels": "Canaux",
@@ -16,6 +18,13 @@
     },
     "restaurant": {
         "new_name": "Le nouveau nom de ton restaurant est",
-        "new_cook": "Ton nouveau nom de chef est"
+        "new_cook": "Ton nouveau nom de chef est",
+        "description": {
+            "message": "Ici tu peux retrouver des informations amusants sur le restaurant demandé tel que la spécialité, le porte-feuille d'entreprise ainsi que les boosts d'xp",
+            "name": "Nom du Restaurant",
+            "speciality": "Spécialité",
+            "rName1": "Chez",
+            "rName2": ""
+        }
     }
 }
