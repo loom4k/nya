@@ -20,7 +20,7 @@
         "new_name": "Le nouveau nom de ton restaurant est",
         "new_cook": "Ton nouveau nom de chef est",
         "description": {
-            "message": "Ici tu peux retrouver des informations amusants sur le restaurant demandé tel que la spécialité, le porte-feuille d'entreprise ainsi que les boosts d'xp",
+            "message": "Ici tu peux retrouver des informations amusants sur le restaurant demandé tel que la spécialité, le porte-feuille d'entreprise ainsi que les boosts d'xp!",
             "name": "Nom du Restaurant",
             "speciality": "Spécialité",
             "rName": "{cook}'s Restaurant"
