@@ -24,7 +24,8 @@
             "name": "Westauwant Name",
             "speciality": "Spweciality",
             "rName1": " ",
-            "rName2": "'s Westaurant"
+            "rName2": "'s Westaurant",
+            "test": "this is a test"
         }
     }
 }
