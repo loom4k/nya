@@ -1,3 +1,30 @@
 {
-    
+    "error": "Es gab einen Fehler beim Ausführen dieses Commands. Du kannst ihn zu den Developern reporten",
+    "new_language": "Die Sprache dieses Servers ist jetzt",
+    "ping_message": "Der Ping des Bots ist",
+    "on_cooldown": "Dieser Command ist auf Cooldown!",
+    "ready_in": "Du kannst ihn wieder benutzen in",
+    "bot_stats": {
+        "developers": "Developers",
+        "channels": "Kanäle",
+        "users": "User",
+        "guilds": "Server",
+        "ram": "Aufgebrauchter RAM",
+        "api": "API Latenz"
+    },
+    "economy": {
+        "cod": "Kabeljau",
+        "worked": "Du hast eine Stunde im Restaurant gearbeitet und bekommst"
+    },
+    "restaurant": {
+        "new_name": "Der neue Name deines Restaurants ist",
+        "new_cook": "Der neue Name deines Koches ist",
+        "description": {
+            "message": "Hier kannst du interessante Statistiken über das angeforderte Restaurant wie die Enterprise-Wallet, Spezialität, XP-Boosts und mehr finden!",
+            "name": "Name des Restaurants",
+            "speciality": "Spezialität",
+            "rName1": "",
+            "rName2": "'s Restaurant"
+        }
+    }
 }

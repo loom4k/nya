@@ -23,12 +23,16 @@ module.exports = {
             {
                 name: "spanish",
                 value: "es"
+            },
+            {
+                name: "uwu",
+                value: "uw"
             }
         ]
     }],
     required: true,
     type: 'CHAT_INPUT',
-    userPermissions: ['ADMINISTRATOR'],
+    userPermissions: ['MANAGE_GUILD'],
     /**
      *
      * @param {Client} client
@@ -36,7 +40,7 @@ module.exports = {
      * @param {String[]} args
      */
     run: async(client, interaction, data) => {
-        if (interaction.options.getString('language') == 'de' || interaction.options.getString('language') == 'es') return interaction.followUp({ content: "This language is not enabled, yet!", ephemeral: true })
+        if (interaction.options.getString('language') == 'es') return interaction.followUp({ content: "This language is not enabled, yet!", ephemeral: true })
         data.guild.lang = interaction.options.getString('language')
         await data.guild.save()
         interaction.followUp({ content: `${data.lang.new_language} \`${data.guild.lang}\`` })

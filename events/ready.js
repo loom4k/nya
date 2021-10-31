@@ -65,7 +65,6 @@ module.exports = class extends Event {
             { name: 'development', type: 'WATCHING' }
         ]
 
-        await this.client.application.commands.set(arrayOfSlashCommands)
         await this.client.user.setPresence({ status: 'online', activity: { name: `all guilds`, type: 'WATCHING' } })
         logger.info(`Set client presence`, { label: 'Client' })
         logger.info(`Logged in as ${this.client.user.tag}`, { label: 'Discord API' })

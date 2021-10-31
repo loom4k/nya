@@ -5,6 +5,7 @@ module.exports = {
     name: "work",
     description: "Work at your restaurant and make some cods!",
     type: 'CHAT_INPUT',
+    cooldown: 3660,
     /**
      *
      * @param {Client} client

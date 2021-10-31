@@ -24,7 +24,8 @@
             "name": "Restaurant Name",
             "speciality": "Speciality",
             "rName1": "",
-            "rName2": "'s Restaurant"
+            "rName2": "'s Restaurant",
+            "test": "this is a test"
         }
     }
 }
