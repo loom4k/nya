@@ -21,17 +21,17 @@ module.exports = {
                 value: "de"
             },
             {
+                name: "simplified chinese",
+                value: "zh"
+            },
+            /*{
                 name: "spanish",
                 value: "es"
             },
             {
-                name: "simplified chinese",
-                value: "zh"
-            },
-            {
                 name: "uwu",
                 value: "uw"
-            }
+            }*/
         ]
     }],
     required: true,
@@ -44,7 +44,7 @@ module.exports = {
      * @param {String[]} args
      */
     run: async(client, interaction, data) => {
-        if (interaction.options.getString('language') == 'es') return interaction.followUp({ content: "This language is not enabled, yet!", ephemeral: true })
+        if (interaction.options.getString('language') == 'es') return interaction.followUp({ content: data.lang.no_lang, ephemeral: true })
         data.guild.lang = interaction.options.getString('language')
         await data.guild.save()
         interaction.followUp({ content: `${data.lang.new_language} \`${data.guild.lang}\`` })

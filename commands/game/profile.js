@@ -13,22 +13,22 @@ module.exports = {
     run: async(client, interaction, data) => {
         try {
             const embed = new MessageEmbed()
-                .setTitle(`${interaction.user.username}'s Profile`)
-                .setDescription(`This is the profile of ${interaction.user.username}. You can see his wallet, chef name, and more about his little restaurant!`)
+                .setTitle(data.lang.profile.title.replace('{user}', interaction.user.username))
+                .setDescription(data.lang.profile.description.replace('{user}', interaction.user.username))
                 .addFields({
-                    name: 'Cook name',
+                    name: data.lang.profile.cookname,
                     value: `\`\`\`${data.user.cookname || interaction.user.username}\`\`\``,
                     inline: true
                 }, {
-                    name: 'Cod Wallet',
+                    name: data.lang.profile.wallet,
                     value: `\`\`\`${data.user.currency.toLocaleString()}\`\`\``,
                     inline: true
                 }, {
-                    name: 'Level',
+                    name: data.lang.profile.level,
                     value: `\`\`\`${data.user.level}\`\`\``,
                     inline: true
                 }, {
-                    name: 'Restaurant Name',
+                    name: data.lang.profile.restaurant_name,
                     value: `\`\`\`${data.user.restaurantname}\`\`\``,
                     inline: true
                 })

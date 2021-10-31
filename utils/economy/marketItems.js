@@ -1,13 +1,25 @@
 module.exports = [{
-    name: `Market Cookie`,
-    description: `Cookie! The best thing on earth`,
-    id: `cookie`,
-    price: 50,
-    useable: true,
-    used: [
-        "You ate a cookie! It's funny, you feel very cookie now. If you weight 99kg and eat a 1kg cookie, are you 1% cookie?",
-        "You destroyed your cookie! Dam you were hungry :O",
-        "Who said cookies were bad for you? Continue eating!"
-    ],
-    type: "Consumable"
-}]
+        name: `Tuna`,
+        description: `Tuna? Sounds like a not so bad fish`,
+        id: `tuna`,
+        price: 10000,
+        useable: true,
+        used: [
+            "Wow! Where did you learn to cook tuna like that? That's definitely on the menu from now on.",
+            "Tuna? Tuna more like... Tuna on the menu!",
+        ],
+        type: "Speciality"
+    },
+    {
+        name: "Salmon",
+        description: "Salmon, the king of the ocean. Ok maybe not.",
+        id: "salmon",
+        price: 25000,
+        useable: true,
+        used: [
+            "OMG OMG OMG OMG! SALMON! Let's make bagels!!!",
+            "Salmon sounds perfect for some sushis!"
+        ],
+        type: "Speciality"
+    }
+]

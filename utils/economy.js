@@ -17,11 +17,13 @@ async function giveMoney(id, amount) {
 async function pay(id, amount) {
     let userData = await database.fetchUser(id)
 
-    if (userData.doublePay == true && Date.now() <= (userData.timeDoublePay + (24 * 60 * 60))) {
+    if (Date.now() <= (userData.timeDoublePay + (24 * 60 * 60))) {
         let amountToPay = amount * 2
+        await giveMoney(id, amountToPay)
         return amountToPay + " (2x bonus)"
     } else {
         let amountToPay = amount
+        await giveMoney(id, amountToPay)
         return amountToPay
 
     }

@@ -8,5 +8,7 @@ module.exports = {
     ramen: "<:ramen:904115792575074325>",
     sashimi: "<:sashimi:904115792524767313>",
     sushi: "<:sushi:904115791249703002>",
-    temaki: "<:temaki:904115793317474324>"
+    temaki: "<:temaki:904115793317474324>",
+    pan: "<:fryingpan:904473939089186887>",
+    cookie: "<:cookie:904475439043604500>"
 }

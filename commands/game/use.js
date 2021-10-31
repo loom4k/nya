@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const items = require("../../utils/economy/items.js")
+let marketItems = require("../../utils/economy/marketItems")
 const userSchema = require("../../database/schemas/User")
 
 module.exports = {
@@ -22,7 +23,7 @@ module.exports = {
             const itemID = interaction.options.getString("item")
             let amount = interaction.options.getInteger("amount")
             const id = interaction.user.id
-            const item = items.find((val) => val.id.toLowerCase() === itemID);
+            let item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
             if (!item) {
                 return interaction.followUp({ content: data.lang.wrong_id })
             }

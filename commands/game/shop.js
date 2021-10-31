@@ -31,7 +31,7 @@ module.exports = {
     run: async(client, interaction, data) => {
         const storeItm = storeItems.map((value, index) => {
             return [
-                `**${value.price.toLocaleString()} ${client.emoji.cod}** ― **${value.name}** (${value.id})`,
+                `**${value.price.toLocaleString()} ${client.emoji.cod}** ― ${value.emoji || ''} **${value.name}** (${value.id})`,
             ].join('\n')
         }).join('\n\n')
 
