@@ -4,7 +4,7 @@
     "ping_message": "Der Ping des Bots ist",
     "on_cooldown": "Dieser Command ist auf Cooldown!",
     "ready_in": "Du kannst ihn wieder benutzen in",
-    "no_lang": "This language is not enabled, yet!",
+    "no_lang": "Diese Sprache ist nicht noch nicht freigegeben!",
     "bot_stats": {
         "developers": "Developers",
         "channels": "Kanäle",
@@ -41,17 +41,17 @@
         "item_buy_indications": "Du kannst dir ein Item mit /buy [item-id] beschaffen",
         "convenience_title": "Annehmlichkeits-Item Laden",
         "market_title": "Lokale Markt Items",
-        "not_enough_money": "You are missing some coins to buy this item",
-        "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
-        "success": "Successfull purchase by {user}",
-        "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
+        "not_enough_money": "Dir fehlen ein paar Münzen um dieses Item zu kaufen",
+        "not_enough": "Du hast nicht genügend Kabeljau um {amount}{item}(s) zu kaufen",
+        "success": "Erfolgreicher Kauf von {user}",
+        "bought": "{user} hat **{amount}(s)** für **{cost}** Kabeljau gekauft"
     },
     "profile": {
-        "title": "{user}'s Profile",
-        "description": "This is the profile of {user}. You can see his wallet, chef name, and more about his little restaurant!",
-        "cookname": "Cook name",
-        "wallet": "Cod Wallet",
+        "title": "{user}'s Profil",
+        "description": "Dies ist das Profil von {user}. Du kannst seine Geldbörse, Chefnamen und mehr über sein / ihr Restaurant erfahren!",
+        "cookname": "Name des Koches",
+        "wallet": "Kabeljau-Geldbörse",
         "level": "Level",
-        "restaurant_name": "Restaurant Name"
+        "restaurant_name": "Name des Restaurants"
     }
 }
