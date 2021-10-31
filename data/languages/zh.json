@@ -1,24 +1,24 @@
 {
-    "error": "There was an error while trying to execute this command. You can report it to the developers",
-    "new_language": "The language of this guild is now set to",
-    "ping_message": "The ping of the client is",
-    "on_cooldown": "This command is on cooldown!",
-    "ready_in": "You'll be able to use it again in",
+    "error": "您输入的指令发生了错误。 您可以把这个错误汇报给制作者。",
+    "new_language": "这个服务器的语言已更换到",
+    "ping_message": "这个用户的延迟是",
+    "on_cooldown": "这个命令在冷却中！",
+    "ready_in": "您需要等",
     "bot_stats": {
-        "developers": "Developers",
-        "channels": "Channels",
-        "users": "Users",
-        "guilds": "Guilds",
-        "ram": "RAM Usage",
-        "api": "API Latency"
+        "developers": "制作者",
+        "channels": "频道",
+        "users": "用户",
+        "guilds": "服务器",
+        "ram": "已用内存",
+        "api": "API 延迟"
     },
     "economy": {
-        "cod": "cods",
-        "worked": "You worked an hour at your restaurant and made"
+        "cod": "鳕鱼",
+        "worked": "您在餐厅工作了一个小时。 您获得了"
     },
     "restaurant": {
-        "new_name": "The new name of your restaurant is",
-        "new_cook": "Your new cook name is",
+        "new_name": "您餐厅的新名字是",
+        "new_cook": "您新的厨师的名字是",
         "description": {
             "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
             "name": "Restaurant Name",
