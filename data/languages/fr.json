@@ -4,7 +4,7 @@
     "ping_message": "Le ping du client est de",
     "on_cooldown": "Cette commande est sur cooldown!",
     "ready_in": "Tu pourras la réutiliser dans",
-    "no_lang": "This language is not enabled, yet!",
+    "no_lang": "Cette langue n'est pas encore disponible!",
     "bot_stats": {
         "developers": "Développeurs",
         "channels": "Canaux",
@@ -41,17 +41,17 @@
         "item_buy_indications": "Tu peux te procurer un item en utilisant /buy [item-id]",
         "convenience_title": "Items du Magasin",
         "market_title": "Items du Marché",
-        "not_enough_money": "You are missing some coins to buy this item",
-        "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
-        "success": "Successfull purchase by {user}",
-        "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
+        "not_enough_money": "Il te manques quelques poissons pour acheter cet item",
+        "not_enough": "Tu n'as pas assez de poissons pour acheter {amount} {item}(s)",
+        "success": "Achat complété par {user}",
+        "bought": "{user} a acheté **{amount}(s)** pour un total de **{cost}** poissons"
     },
     "profile": {
-        "title": "{user}'s Profile",
-        "description": "This is the profile of {user}. You can see his wallet, chef name, and more about his little restaurant!",
-        "cookname": "Cook name",
-        "wallet": "Cod Wallet",
-        "level": "Level",
-        "restaurant_name": "Restaurant Name"
+        "title": "Profil de {user}",
+        "description": "Voici le profil de {user}. Tu peux voir son porte feuille, nom de chef et bien plus sur son petit restaurant!",
+        "cookname": "Nom de chef",
+        "wallet": "Porte feuille poisson",
+        "level": "Niveau",
+        "restaurant_name": "Nom du Restaurant"
     }
 }
