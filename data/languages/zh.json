@@ -23,22 +23,22 @@
             "message": "您可以在这里找到很多您餐厅的信息， 比如您的资产， 专业， 经验提升， 还有其他有意思的信息!",
             "name": "餐厅名字",
             "speciality": "专业",
-            "rName": "{cook}'s Restaurant"
+            "rName": "{cook} 的餐厅"
         }
     },
     "item": {
-        "cosmetic": "That item can't be used. It's a cosmetic",
-        "no_item": "You don't have any of these in your inventory",
-        "missing": "You are missing {amount} {item}(s) in your inventory"
+        "cosmetic": "装饰物品不能被使用。",
+        "no_item": "您背包里没有这个物品。",
+        "missing": "您背包里还缺少 {amount} {item}(s)。"
     },
-    "wrong_id": "The ID you provided is incorrect. Please check the spelling",
+    "wrong_id": "您输入的 ID 存在错误。 请检查您的拼写。",
     "words": {
-        "used_": "used",
-        "his_": "his"
+        "used_": "使用了",
+        "his_": "他的"
     },
     "store": {
-        "item_buy_indications": "You can procure yourself an item using /buy [item-id]",
-        "convenience_title": "Convenience Store Items",
-        "market_title": "Local Market Items"
+        "item_buy_indications": "您可以使用 /buy [item-id] 来购买一些物品。",
+        "convenience_title": "便利店物品",
+        "market_title": "市场物品"
     }
 }
