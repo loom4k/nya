@@ -2,6 +2,8 @@
     "error": "There was an error while trying to execute this command. You can report it to the developers",
     "new_language": "The language of this guild is now set to",
     "ping_message": "The ping of the client is",
+    "on_cooldown": "This command is on cooldown!",
+    "ready_in": "You'll be able to use it again in",
     "bot_stats": {
         "developers": "Developers",
         "channels": "Channels",
@@ -16,6 +18,13 @@
     },
     "restaurant": {
         "new_name": "The new name of your restaurant is",
-        "new_cook": "Your new cook name is"
+        "new_cook": "Your new cook name is",
+        "description": {
+            "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
+            "name": "Restaurant Name",
+            "speciality": "Speciality",
+            "rName1": "",
+            "rName2": "'s Restaurant"
+        }
     }
 }
