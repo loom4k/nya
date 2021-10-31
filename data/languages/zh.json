@@ -20,11 +20,11 @@
         "new_name": "您餐厅的新名字是",
         "new_cook": "您新的厨师的名字是",
         "description": {
-            "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
-            "name": "Restaurant Name",
-            "speciality": "Speciality",
-            "rName1": "",
-            "rName2": "'s Restaurant"
+            "message": "您可以在这里找到很多您餐厅的信息， 比如您的资产， 专业， 经验提升， 还有其他有意思的信息!",
+            "name": "餐厅名字",
+            "speciality": "专业",
+            "rName1": " ",
+            "rName2": "的餐厅"
         }
     }
 }
