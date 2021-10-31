@@ -22,7 +22,7 @@
         "description": {
             "message": "Hier kannst du interessante Statistiken über das angeforderte Restaurant wie die Enterprise-Wallet, Spezialität, XP-Boosts und mehr finden!",
             "name": "Name des Restaurants",
-            "speciality": "Speciality",
+            "speciality": "Spezialität",
             "rName1": "",
             "rName2": "'s Restaurant"
         }
