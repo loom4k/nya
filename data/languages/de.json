@@ -4,6 +4,7 @@
     "ping_message": "Der Ping des Bots ist",
     "on_cooldown": "Dieser Command ist auf Cooldown!",
     "ready_in": "Du kannst ihn wieder benutzen in",
+    "no_lang": "This language is not enabled, yet!",
     "bot_stats": {
         "developers": "Developers",
         "channels": "Kanäle",
@@ -39,6 +40,18 @@
     "store": {
         "item_buy_indications": "Du kannst dir ein Item mit /buy [item-id] beschaffen",
         "convenience_title": "Annehmlichkeits-Item Laden",
-        "market_title": "Lokale Markt Items"
+        "market_title": "Lokale Markt Items",
+        "not_enough_money": "You are missing some coins to buy this item",
+        "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
+        "success": "Successfull purchase by {user}",
+        "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
+    },
+    "profile": {
+        "title": "{user}'s Profile",
+        "description": "This is the profile of {user}. You can see his wallet, chef name, and more about his little restaurant!",
+        "cookname": "Cook name",
+        "wallet": "Cod Wallet",
+        "level": "Level",
+        "restaurant_name": "Restaurant Name"
     }
 }
