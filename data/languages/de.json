@@ -1,27 +1,27 @@
 {
-    "error": "There was an error while trying to execute this command. You can report it to the developers",
-    "new_language": "The language of this guild is now set to",
-    "ping_message": "The ping of the client is",
-    "on_cooldown": "This command is on cooldown!",
-    "ready_in": "You'll be able to use it again in",
+    "error": "Es gab einen Fehler beim Ausführen dieses Commands. Du kannst ihn zu den Developern reporten",
+    "new_language": "Die Sprache dieses Servers ist jetzt",
+    "ping_message": "Der Ping des Bots ist",
+    "on_cooldown": "Dieser Command ist auf Cooldown!",
+    "ready_in": "Du kannst ihn wieder benutzen in",
     "bot_stats": {
         "developers": "Developers",
-        "channels": "Channels",
-        "users": "Users",
-        "guilds": "Guilds",
-        "ram": "RAM Usage",
-        "api": "API Latency"
+        "channels": "Kanäle",
+        "users": "User",
+        "guilds": "Server",
+        "ram": "Aufgebrauchter RAM",
+        "api": "API Latenz"
     },
     "economy": {
         "cod": "Kabeljau",
-        "worked": "You worked an hour at your restaurant and made"
+        "worked": "Du hast eine Stunde im Restaurant gearbeitet und bekommst"
     },
     "restaurant": {
-        "new_name": "The new name of your restaurant is",
-        "new_cook": "Your new cook name is",
+        "new_name": "Der neue Name deines Restaurants ist",
+        "new_cook": "Der neue Name deines Koches ist",
         "description": {
-            "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
-            "name": "Restaurant Name",
+            "message": "Hier kannst du interessante Statistiken über das angeforderte Restaurant wie die Enterprise-Wallet, Spezialität, XP-Boosts und mehr finden!",
+            "name": "Name des Restaurants",
             "speciality": "Speciality",
             "rName1": "",
             "rName2": "'s Restaurant"
