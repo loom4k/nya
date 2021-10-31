@@ -25,6 +25,10 @@ module.exports = {
                 value: "es"
             },
             {
+                name: "simplified chinese",
+                value: "zh"
+            },
+            {
                 name: "uwu",
                 value: "uw"
             }

@@ -47,30 +47,34 @@ module.exports = {
      * @param {String[]} args
      */
     run: async(client, interaction, data) => {
-        if (interaction.options.getSubcommand() == 'info') {
-            let embed = new MessageEmbed()
-                .setDescription(data.lang.restaurant.description.message)
-                .setColor(client.colors.greeny)
-            await embed
-                .setTitle(data.lang.restaurant.description.rName1 + " " + data.user.cookname + data.lang.restaurant.description.rName2)
-                .addFields({
-                    name: data.lang.restaurant.description.name,
-                    value: `\`\`\`${data.user.restaurantname}\`\`\``,
-                    inline: true
-                }, {
-                    name: data.lang.restaurant.description.speciality,
-                    value: `\`\`\`${data.user.speciality}\`\`\``,
-                    inline: true
-                })
-            interaction.followUp({ embeds: [embed] })
-        } else if (interaction.options.getSubcommand() == 'name') {
-            data.user.restaurantname = interaction.options.getString('newname')
-            await data.user.save()
-            interaction.followUp({ content: `${data.lang.restaurant.new_name}: \`${interaction.options.getString('newname')}\`` })
-        } else if (interaction.options.getSubcommand() == 'cook') {
-            data.user.cookname = interaction.options.getString('newcookname')
-            await data.user.save()
-            interaction.followUp({ content: `${data.lang.restaurant.new_cook}: \`${interaction.options.getString('cookname')}\`` })
+        try {
+            if (interaction.options.getSubcommand() == 'info') {
+                let embed = new MessageEmbed()
+                    .setDescription(data.lang.restaurant.description.message)
+                    .setColor(client.colors.greeny)
+                await embed
+                    .setTitle(data.lang.restaurant.description.rName.replace('{cook}', data.user.cookname))
+                    .addFields({
+                        name: data.lang.restaurant.description.name,
+                        value: `\`\`\`${data.user.restaurantname}\`\`\``,
+                        inline: true
+                    }, {
+                        name: data.lang.restaurant.description.speciality,
+                        value: `\`\`\`${data.user.speciality}\`\`\``,
+                        inline: true
+                    })
+                interaction.followUp({ embeds: [embed] })
+            } else if (interaction.options.getSubcommand() == 'name') {
+                data.user.restaurantname = interaction.options.getString('newname')
+                await data.user.save()
+                interaction.followUp({ content: `${data.lang.restaurant.new_name}: \`${interaction.options.getString('newname')}\`` })
+            } else if (interaction.options.getSubcommand() == 'cook') {
+                data.user.cookname = interaction.options.getString('newcookname')
+                await data.user.save()
+                interaction.followUp({ content: `${data.lang.restaurant.new_cook}: \`${interaction.options.getString('newcookname')}\`` })
+            }
+        } catch (e) {
+            console.log(e)
         }
     },
 };

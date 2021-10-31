@@ -15,8 +15,8 @@ module.exports = {
     run: async(client, interaction, data) => {
         try {
             let amount = Math.round(Math.random() * 250 + 150) * data.user.level
-            await economy.giveMoney(interaction.user.id, amount)
-            interaction.editReply({ content: `${data.lang.economy.worked} **${amount}** ${client.emoji.cod}!` })
+            let pay = await economy.pay(interaction.user.id, amount)
+            interaction.editReply({ content: `${data.lang.economy.worked} **${pay}** ${client.emoji.cod}!` })
         } catch (error) {
             console.log(error)
         }

@@ -12,8 +12,20 @@ async function giveMoney(id, amount) {
 
     userData.currency = userData.currency + amount
     userData.save()
-
-    return userData
 }
 
-module.exports = { giveMoney }
+async function pay(id, amount) {
+    let userData = await database.fetchUser(id)
+
+    if (userData.doublePay == true && Date.now() <= (userData.timeDoublePay + (24 * 60 * 60))) {
+        let amountToPay = amount * 2
+        return amountToPay + " (2x bonus)"
+    } else {
+        let amountToPay = amount
+        return amountToPay
+
+    }
+
+}
+
+module.exports = { giveMoney, pay }

@@ -17,9 +17,10 @@ module.exports = class extends Event {
                 data.guild = guildData
                 data.user = userData
                 data.lang = langData
+                module.exports = { data }
                 const cmd = this.client.slashCommands.get(interaction.commandName)
                 try {
-                    let cmdCooldown = cmd.cooldown || 15
+                    let cmdCooldown = cmd.cooldown || 5
                     const cooldown = cmdCooldown * 1000
                     if (cmdCooldown) {
                         if (this.client.Timeout.has(`${cmd.name}${interaction.user.id}`)) {

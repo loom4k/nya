@@ -5,9 +5,16 @@ module.exports = mongoose.model('User', new mongoose.Schema({
     registeredAt: { type: Number, default: Date.now() }, // Date at which the bot created the first schema
 
     currency: { type: Number, default: 0 },
+    inventory: {
+        type: Array,
+        default: []
+    },
 
     level: { type: Number, default: 1 },
     cookname: { type: String, default: 'Cat Cook' },
     restaurantname: { type: String, default: 'Nyao!\'s restaurant' },
-    speciality: { type: String, default: 'Cod' }
+    speciality: { type: String, default: 'Cod' },
+
+    doublePay: { type: Boolean, default: false },
+    timeDoublePay: { type: Number, default: Date.now() }
 }))

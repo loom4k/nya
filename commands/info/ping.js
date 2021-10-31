@@ -4,7 +4,7 @@ module.exports = {
     name: "ping",
     description: "Returns my websocket ping!",
     type: 'CHAT_INPUT',
-    cooldown: 15,
+    cooldown: 5,
     /**
      *
      * @param {Client} client
