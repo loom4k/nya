@@ -23,8 +23,22 @@
             "message": "Ici tu peux retrouver des informations amusants sur le restaurant demandé tel que la spécialité, le porte-feuille d'entreprise ainsi que les boosts d'xp",
             "name": "Nom du Restaurant",
             "speciality": "Spécialité",
-            "rName1": "",
-            "rName2": "'s Restaurant"
+            "rName": "{cook}'s Restaurant"
         }
+    },
+    "item": {
+        "cosmetic": "That item can't be used. It's a cosmetic",
+        "no_item": "You don't have any of these in your inventory",
+        "missing": "You are missing {amount} {item}(s) in your inventory"
+    },
+    "wrong_id": "The ID you provided is incorrect. Please check the spelling",
+    "words": {
+        "used_": "used",
+        "his_": "his"
+    },
+    "store": {
+        "item_buy_indications": "You can procure yourself an item using /buy [item-id]",
+        "convenience_title": "Convenience Store Items",
+        "market_title": "Local Market Items"
     }
 }
