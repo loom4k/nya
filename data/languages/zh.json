@@ -48,10 +48,10 @@
     },
     "profile": {
         "title": "{user} 的简介",
-        "description": "This is the profile of {user}. You can see his wallet, chef name, and more about his little restaurant!",
-        "cookname": "Cook name",
-        "wallet": "Cod Wallet",
-        "level": "Level",
-        "restaurant_name": "Restaurant Name"
+        "description": "这是 {user} 的简介。 您可以看到他的资产， 厨师名字， 和其他关于他的餐厅的信息！",
+        "cookname": "厨师名字",
+        "wallet": "鳕鱼",
+        "level": "等级",
+        "restaurant_name": "餐厅名字"
     }
 }
