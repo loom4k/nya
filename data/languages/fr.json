@@ -4,6 +4,7 @@
     "ping_message": "Le ping du client est de",
     "on_cooldown": "Cette commande est sur cooldown!",
     "ready_in": "Tu pourras la réutiliser dans",
+    "no_lang": "Cette langue n'est pas encore disponible!",
     "bot_stats": {
         "developers": "Développeurs",
         "channels": "Canaux",
@@ -20,11 +21,37 @@
         "new_name": "Le nouveau nom de ton restaurant est",
         "new_cook": "Ton nouveau nom de chef est",
         "description": {
-            "message": "Ici tu peux retrouver des informations amusants sur le restaurant demandé tel que la spécialité, le porte-feuille d'entreprise ainsi que les boosts d'xp",
+            "message": "Ici tu peux retrouver des informations amusants sur le restaurant demandé tel que la spécialité, le porte-feuille d'entreprise ainsi que les boosts d'xp!",
             "name": "Nom du Restaurant",
             "speciality": "Spécialité",
-            "rName1": "Chez",
-            "rName2": ""
+            "rName": "Restaurant de {cook}"
         }
+    },
+    "item": {
+        "cosmetic": "Cet item n'est pas utilisable, il n'est que cosmétique",
+        "no_item": "Tu n'as pas cela dans ton inventaire",
+        "missing": "Il te manque {amount} {item}(s) dans ton inventaire"
+    },
+    "wrong_id": "L'ID que vous avez entré est incorrect. Vérifier les fautes de frappes",
+    "words": {
+        "used_": "utilisé",
+        "his_": "son"
+    },
+    "store": {
+        "item_buy_indications": "Tu peux te procurer un item en utilisant /buy [item-id]",
+        "convenience_title": "Items du Magasin",
+        "market_title": "Items du Marché",
+        "not_enough_money": "Il te manques quelques poissons pour acheter cet item",
+        "not_enough": "Tu n'as pas assez de poissons pour acheter {amount} {item}(s)",
+        "success": "Achat complété par {user}",
+        "bought": "{user} a acheté **{amount}(s)** pour un total de **{cost}** poissons"
+    },
+    "profile": {
+        "title": "Profil de {user}",
+        "description": "Voici le profil de {user}. Tu peux voir son porte feuille, nom de chef et bien plus sur son petit restaurant!",
+        "cookname": "Nom de chef",
+        "wallet": "Porte feuille poisson",
+        "level": "Niveau",
+        "restaurant_name": "Nom du Restaurant"
     }
 }
