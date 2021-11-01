@@ -4,7 +4,7 @@
     "ping_message": "这个用户的延迟是",
     "on_cooldown": "这个命令在冷却中！",
     "ready_in": "您需要等",
-    "no_lang": "This language is not enabled, yet!",
+    "no_lang": "这个语言还没有被开启。",
     "bot_stats": {
         "developers": "制作者",
         "channels": "频道",
@@ -41,13 +41,13 @@
         "item_buy_indications": "您可以使用 /buy [item-id] 来购买一些物品。",
         "convenience_title": "便利店物品",
         "market_title": "市场物品",
-        "not_enough_money": "You are missing some coins to buy this item",
-        "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
-        "success": "Successfull purchase by {user}",
-        "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
+        "not_enough_money": "您没有足够的钱去买这个物品。",
+        "not_enough": "您没有足够的鳕鱼来买 {amount} {item}(s)。",
+        "success": "这个物品被 {user} 买了。",
+        "bought": "{user} 用了 **{cost}** 鳕鱼 买了 **{amount}(s)**。"
     },
     "profile": {
-        "title": "{user}'s Profile",
+        "title": "{user} 的简介",
         "description": "This is the profile of {user}. You can see his wallet, chef name, and more about his little restaurant!",
         "cookname": "Cook name",
         "wallet": "Cod Wallet",
