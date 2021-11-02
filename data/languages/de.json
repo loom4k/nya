@@ -1,10 +1,11 @@
 {
     "error": "Es gab einen Fehler beim Ausführen dieses Commands. Du kannst ihn zu den Developern reporten",
-    "new_language": "Die Sprache dieses Servers ist jetzt",
-    "ping_message": "Der Ping des Bots ist",
+    "new_language": "The language of this guild is now set to {language}",
+    "ping_message": "The ping of the client is {ping}ms.",
     "on_cooldown": "Dieser Command ist auf Cooldown!",
-    "ready_in": "Du kannst ihn wieder benutzen in",
+    "ready_in": "You'll be able to use it again in {time}",
     "no_lang": "Diese Sprache ist nicht noch nicht freigegeben!",
+    "inventory_title": "{user}'s Inventory",
     "bot_stats": {
         "developers": "Developers",
         "channels": "Kanäle",
@@ -15,11 +16,11 @@
     },
     "economy": {
         "cod": "Kabeljau",
-        "worked": "Du hast eine Stunde im Restaurant gearbeitet und bekommst"
+        "worked": "You worked an hour at your restaurant and made {money}!"
     },
     "restaurant": {
-        "new_name": "Der neue Name deines Restaurants ist",
-        "new_cook": "Der neue Name deines Koches ist",
+        "new_name": "The new name of your restaurant is: {name}",
+        "new_cook": "Your new cook name is: {name}",
         "description": {
             "message": "Hier kannst du interessante Statistiken über das angeforderte Restaurant wie die Enterprise-Wallet, Spezialität, XP-Boosts und mehr finden!",
             "name": "Name des Restaurants",
