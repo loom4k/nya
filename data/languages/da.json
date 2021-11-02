@@ -22,10 +22,10 @@
         "new_name": "Det nye navn på din restaurant er: {name}",
         "new_cook": "Din nye koks navn er: {name}",
         "description": {
-            "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
-            "name": "Restaurant Name",
-            "speciality": "Speciality",
-            "rName": "{cook}'s Restaurant"
+            "message": "Her kan du finde spændende informationer omkring den anmodet restaurant, så som virksomhedens pungen, specialiteter, xp boost og mere!",
+            "name": "Restaurant Navn",
+            "speciality": "Specialitet",
+            "rName": "{cook}'s restaurant"
         }
     },
     "item": {
