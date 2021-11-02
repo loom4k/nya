@@ -1,11 +1,11 @@
 {
     "error": "Une erreur est survenue lors de l'exécution de cette commande. Veuillez réessayer plus tard.",
-    "new_language": "The language of this guild is now set to {language}",
-    "ping_message": "The ping of the client is {ping}ms.",
+    "new_language": "La langue de ce serveur est maintenant définie comme {language}",
+    "ping_message": "La latence du client est de {ping}ms.",
     "on_cooldown": "Cette commande est sur cooldown!",
-    "ready_in": "You'll be able to use it again in {time}",
+    "ready_in": "Tu pourras la réutiliser dans {time}",
     "no_lang": "Cette langue n'est pas encore disponible!",
-    "inventory_title": "{user}'s Inventory",
+    "inventory_title": "Inventaire de {user}",
     "bot_stats": {
         "developers": "Développeurs",
         "channels": "Canaux",
@@ -16,11 +16,11 @@
     },
     "economy": {
         "cod": "poissons",
-        "worked": "You worked an hour at your restaurant and made {money}!"
+        "worked": "Tu as travailler une heure à ton restaurant et a amassé {money}!"
     },
     "restaurant": {
-        "new_name": "The new name of your restaurant is: {name}",
-        "new_cook": "Your new cook name is: {name}",
+        "new_name": "Le nouveau nom de ton restaurant est: {name}",
+        "new_cook": "Ton nouveau nom de chef est: {name}",
         "description": {
             "message": "Ici tu peux retrouver des informations amusants sur le restaurant demandé tel que la spécialité, le porte-feuille d'entreprise ainsi que les boosts d'xp!",
             "name": "Nom du Restaurant",
