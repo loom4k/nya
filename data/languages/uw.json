@@ -1,10 +1,11 @@
 {
     "error": "Thewe was an ewwow while twying to execuwute thib cowmand. U can repowt it to the developews",
-    "new_language": "The languaw of this guild is now set to",
-    "ping_message": "The pong of the cwient is",
+    "new_language": "The language of this guild is now set to {language}",
+    "ping_message": "The ping of the client is {ping}ms.",
     "on_cooldown": "Thib cowmand is on coowdown!",
-    "ready_in": "U'll be abwe to use it agwain in",
+    "ready_in": "You'll be able to use it again in {time}",
     "no_lang": "Thib langwage isn't enabled, yet!",
+    "inventory_title": "{user}'s Inventory",
     "bot_stats": {
         "developers": "Develowers",
         "channels": "Chanels",
@@ -15,11 +16,11 @@
     },
     "economy": {
         "cod": "fwish",
-        "worked": "U worked an houw at ur westaurant and made"
+        "worked": "You worked an hour at your restaurant and made {money}!"
     },
     "restaurant": {
-        "new_name": "The new name of ur westaurant ib",
-        "new_cook": "Ur new cook name is",
+        "new_name": "The new name of your restaurant is: {name}",
+        "new_cook": "Your new cook name is: {name}",
         "description": {
             "message": "Hew you can find inteweting stats about the wequested restaurant like entwepise coins and spweciality!",
             "name": "Westauwant Name",
