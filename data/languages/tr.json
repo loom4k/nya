@@ -1,5 +1,5 @@
 {
-    "error": "Bu komutu çalıştırırken bir hata oluştu. Bu hatayı geliştiricilere bildirebilirsiniz.",
+    "error": "Bu komutu çalıştırırken bir hata oluştu. Bu hatayı geliştiricilere bildirebilirsiniz",
     "new_language": "The language of this guild is now set to {language}",
     "ping_message": "The ping of the client is {ping}ms.",
     "on_cooldown": "Bu komutu kullanmak için biraz beklemelisin!",
