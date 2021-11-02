@@ -1,26 +1,26 @@
 {
     "error": "Der var en fejl under forsøget på at udføre denne kommando. Du kan rapportere fejlen til developerne",
     "new_language": "Sproget på denne server er nu sat til {language}",
-    "ping_message": "The ping of the client is {ping}ms.",
-    "on_cooldown": "This command is on cooldown!",
-    "ready_in": "You'll be able to use it again in {time}",
-    "no_lang": "This language is not enabled, yet!",
-    "inventory_title": "{user}'s Inventory",
+    "ping_message": "Pingen af klienten er {ping}ms.",
+    "on_cooldown": "Denne kommando er under nedkøling!",
+    "ready_in": "Du vil kunne bruge den igen om {time}",
+    "no_lang": "Dette sprog er ikke aktiveret, endnu!",
+    "inventory_title": "{user}'s Inventar",
     "bot_stats": {
         "developers": "Developers",
-        "channels": "Channels",
-        "users": "Users",
-        "guilds": "Guilds",
-        "ram": "RAM Usage",
-        "api": "API Latency"
+        "channels": "Kanalerne",
+        "users": "Brugere",
+        "guilds": "Server",
+        "ram": "RAM Forbrug",
+        "api": "API Forsinkelse"
     },
     "economy": {
-        "cod": "cods",
-        "worked": "You worked an hour at your restaurant and made {money}!"
+        "cod": "torsk",
+        "worked": "Du arbejdede en time på din restaurant og tjente {money}!"
     },
     "restaurant": {
-        "new_name": "The new name of your restaurant is: {name}",
-        "new_cook": "Your new cook name is: {name}",
+        "new_name": "Det nye navn på din restaurant er: {name}",
+        "new_cook": "Din nye koks navn er: {name}",
         "description": {
             "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
             "name": "Restaurant Name",
