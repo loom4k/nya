@@ -1,0 +1,57 @@
+{
+    "error": "There was an error while trying to execute this command. You can report it to the developers",
+    "new_language": "The language of this guild is now set to",
+    "ping_message": "The ping of the client is",
+    "on_cooldown": "This command is on cooldown!",
+    "ready_in": "You'll be able to use it again in",
+    "no_lang": "This language is not enabled, yet!",
+    "bot_stats": {
+        "developers": "Developers",
+        "channels": "Channels",
+        "users": "Users",
+        "guilds": "Guilds",
+        "ram": "RAM Usage",
+        "api": "API Latency"
+    },
+    "economy": {
+        "cod": "cods",
+        "worked": "You worked an hour at your restaurant and made"
+    },
+    "restaurant": {
+        "new_name": "The new name of your restaurant is",
+        "new_cook": "Your new cook name is",
+        "description": {
+            "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
+            "name": "Restaurant Name",
+            "speciality": "Speciality",
+            "rName": "{cook}'s Restaurant"
+        }
+    },
+    "item": {
+        "cosmetic": "That item can't be used. It's a cosmetic",
+        "no_item": "You don't have any of these in your inventory",
+        "missing": "You are missing {amount} {item}(s) in your inventory"
+    },
+    "wrong_id": "The ID you provided is incorrect. Please check the spelling",
+    "words": {
+        "used_": "used",
+        "his_": "his"
+    },
+    "store": {
+        "item_buy_indications": "You can procure yourself an item using /buy [item-id]",
+        "convenience_title": "Convenience Store Items",
+        "market_title": "Local Market Items",
+        "not_enough_money": "You are missing some coins to buy this item",
+        "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
+        "success": "Successfull purchase by {user}",
+        "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
+    },
+    "profile": {
+        "title": "{user}'s Profile",
+        "description": "This is the profile of {user}. You can see his wallet, chef name, and more about his little restaurant!",
+        "cookname": "Cook name",
+        "wallet": "Cod Wallet",
+        "level": "Level",
+        "restaurant_name": "Restaurant Name"
+    }
+}
