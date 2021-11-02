@@ -1,10 +1,11 @@
 {
     "error": "Bu komutu çalıştırırken bir hata oluştu. Bu hatayı geliştiricilere bildirebilirsiniz.",
-    "new_language": "Sunucunun yeni dili şu şekilde ayarlandı: ",
-    "ping_message": "Botun gecikmesi: ",
+    "new_language": "The language of this guild is now set to {language}",
+    "ping_message": "The ping of the client is {ping}ms.",
     "on_cooldown": "Bu komutu kullanmak için biraz beklemelisin!",
-    "ready_in": "You'll be able to use it again in",
+    "ready_in": "You'll be able to use it again in {time}",
     "no_lang": "This language is not enabled, yet!",
+    "inventory_title": "{user}'s Inventory",
     "bot_stats": {
         "developers": "Developers",
         "channels": "Channels",
@@ -15,11 +16,11 @@
     },
     "economy": {
         "cod": "cods",
-        "worked": "You worked an hour at your restaurant and made"
+        "worked": "You worked an hour at your restaurant and made {money}!"
     },
     "restaurant": {
-        "new_name": "The new name of your restaurant is",
-        "new_cook": "Your new cook name is",
+        "new_name": "The new name of your restaurant is: {name}",
+        "new_cook": "Your new cook name is: {name}",
         "description": {
             "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
             "name": "Restaurant Name",
