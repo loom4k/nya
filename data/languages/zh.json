@@ -1,10 +1,11 @@
 {
     "error": "您输入的指令发生了错误。 您可以把这个错误汇报给制作者。",
-    "new_language": "这个服务器的语言已更换到",
-    "ping_message": "这个用户的延迟是",
+    "new_language": "The language of this guild is now set to {language}",
+    "ping_message": "The ping of the client is {ping}ms.",
     "on_cooldown": "这个命令在冷却中！",
-    "ready_in": "您需要等",
+    "ready_in": "You'll be able to use it again in {time}",
     "no_lang": "这个语言还没有被开启。",
+    "inventory_title": "{user}'s Inventory",
     "bot_stats": {
         "developers": "制作者",
         "channels": "频道",
@@ -15,11 +16,11 @@
     },
     "economy": {
         "cod": "鳕鱼",
-        "worked": "您在餐厅工作了一个小时。 您获得了"
+        "worked": "You worked an hour at your restaurant and made {money}!"
     },
     "restaurant": {
-        "new_name": "您餐厅的新名字是",
-        "new_cook": "您新的厨师的名字是",
+        "new_name": "The new name of your restaurant is: {name}",
+        "new_cook": "Your new cook name is: {name}",
         "description": {
             "message": "您可以在这里找到很多您餐厅的信息， 比如您的资产， 专业， 经验提升， 还有其他有意思的信息!",
             "name": "餐厅名字",
