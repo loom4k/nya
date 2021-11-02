@@ -12,6 +12,6 @@ module.exports = {
      * @param {String[]} args
      */
     run: async(client, interaction, data) => {
-        interaction.followUp({ content: `${data.lang.ping_message} ${client.ws.ping}ms.` })
+        interaction.followUp({ content: `${data.lang.ping_message.replace('{ping}', client.ws.ping)}` })
     },
 };

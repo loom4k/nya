@@ -3,7 +3,9 @@ Boost your server engagement with Nya! Have fun with economy, restaurant games a
 # Nya! Boost your server
 Nya is one of the best server engagement and game bot available on the platform, it offers great economy features, a very cool mini-game and even a very very dum chatbot! It's based around the new Discord Interactions!
 
-Nya comes in 5 different languages and more are coming soon! Wait is UwU a language?
+## Start using Nya
+
+You can start by doing `/profile` which will give you access to a little description and stats about your profile. If you wanna modify your restaurant, enter `/restaurant modify`, choose an option and fill in the fields. Finally, to work and gain some money, simply use `/work`. You can explore all the commands by entering `/` and scrolling through the menus. More are on the way! Nya also comes in 5 different languages and more are coming soon! Wait is UwU a language?
 
 ## Economy
 The world of Nya is based around a coin named the cod. Yes, the fish. It allows you to buy cookies, dozens of differents items as well as boosters for your restaurant! Someone said restaurant?

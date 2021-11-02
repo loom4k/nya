@@ -67,11 +67,11 @@ module.exports = {
             } else if (interaction.options.getSubcommand() == 'name') {
                 data.user.restaurantname = interaction.options.getString('newname')
                 await data.user.save()
-                interaction.followUp({ content: `${data.lang.restaurant.new_name}: \`${interaction.options.getString('newname')}\`` })
+                interaction.followUp({ content: data.lang.restaurant.new_name.replace('{name}', interaction.options.getString('newname')) })
             } else if (interaction.options.getSubcommand() == 'cook') {
                 data.user.cookname = interaction.options.getString('newcookname')
                 await data.user.save()
-                interaction.followUp({ content: `${data.lang.restaurant.new_cook}: \`${interaction.options.getString('newcookname')}\`` })
+                interaction.followUp({ content: data.lang.restaurant.new_cook.replace('{name}', interaction.options.getString('newcookname')) })
             }
         } catch (e) {
             console.log(e)

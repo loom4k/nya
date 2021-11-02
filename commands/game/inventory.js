@@ -14,7 +14,7 @@ module.exports = {
             }
 
             const embed = new MessageEmbed()
-                .setAuthor(`${interaction.user.tag}'s inventory`, interaction.user.displayAvatarURL({ dynamic: true }))
+                .setAuthor(data.lang.inventory_title.replace('{user}', interaction.user.tag), interaction.user.displayAvatarURL({ dynamic: true }))
                 .setDescription(reply)
                 .setColor(client.colors.greeny)
 

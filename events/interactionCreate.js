@@ -4,29 +4,29 @@ const ms = require('ms')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = class extends Event {
-        async run(interaction) {
-            this.runCommand(interaction)
-        }
+    async run(interaction) {
+        this.runCommand(interaction)
+    }
 
-        async runCommand(interaction) {
-                let guildData = await this.client.Database.fetchGuild(interaction.guild.id)
-                let userData = await this.client.Database.fetchUser(interaction.member.id)
-                let langData = require(`../data/languages/${guildData.lang}.json`)
+    async runCommand(interaction) {
+        let guildData = await this.client.Database.fetchGuild(interaction.guild.id)
+        let userData = await this.client.Database.fetchUser(interaction.member.id)
+        let langData = require(`../data/languages/${guildData.lang}.json`)
 
-                let data = {}
-                data.guild = guildData
-                data.user = userData
-                data.lang = langData
-                module.exports = { data }
-                const cmd = this.client.slashCommands.get(interaction.commandName)
-                try {
-                    let cmdCooldown = cmd.cooldown || 5
-                    const cooldown = cmdCooldown * 1000
-                    if (cmdCooldown) {
-                        if (this.client.Timeout.has(`${cmd.name}${interaction.user.id}`)) {
-                            let cooldownEmbed = new MessageEmbed()
-                                .setTitle(data.lang.on_cooldown)
-                                .setDescription(`${data.lang.ready_in} \`${ms(this.client.Timeout.get(`${cmd.name}${interaction.user.id}`) - Date.now(), { long: true })}\``)
+        let data = {}
+        data.guild = guildData
+        data.user = userData
+        data.lang = langData
+        module.exports = { data }
+        const cmd = this.client.slashCommands.get(interaction.commandName)
+        try {
+            let cmdCooldown = cmd.cooldown || 5
+            const cooldown = cmdCooldown * 1000
+            if (cmdCooldown) {
+                if (this.client.Timeout.has(`${cmd.name}${interaction.user.id}`)) {
+                    let cooldownEmbed = new MessageEmbed()
+                        .setTitle(data.lang.on_cooldown)
+                        .setDescription(`${data.lang.ready_in.replace('{time}', ms(this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now(), { long: true }))}`)
                         .setColor(this.client.colors.redish)
                     return interaction.reply({ embeds: [cooldownEmbed], ephemeral: true })
                 } else {
