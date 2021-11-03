@@ -31,7 +31,8 @@
     "item": {
         "cosmetic": "装饰物品不能被使用。",
         "no_item": "您背包里没有这个物品。",
-        "missing": "您背包里还缺少 {amount} {item}(s)。"
+        "missing": "您背包里还缺少 {amount} {item}(s)。",
+        "disabled": "The item you tried using is currently disabled. Please come back later!"
     },
     "wrong_id": "您输入的 ID 存在错误。 请检查您的拼写。",
     "words": {
