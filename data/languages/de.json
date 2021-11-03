@@ -31,7 +31,8 @@
     "item": {
         "cosmetic": "Dieses Item kann nicht benutzt werden. Es ist ein Kosmetik-Item",
         "no_item": "Du hast keine von denen in deinem Inventar",
-        "missing": "Dir fehlen {amount} {item}(s) in deinem Inventar"
+        "missing": "Dir fehlen {amount} {item}(s) in deinem Inventar",
+        "disabled": "The item you tried using is currently disabled. Please come back later!"
     },
     "wrong_id": "Die ID, welche du vorausgesetzt hast, ist inkorrekt. Bitte überprüfe deine Rechtschreibung",
     "words": {
