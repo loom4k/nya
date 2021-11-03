@@ -31,7 +31,8 @@
     "item": {
         "cosmetic": "Lucrul acesta nu se poate folosi. E un cosmetic",
         "no_item": "Nu ai acest lucru în inventarul tau",
-        "missing": "Îți lipsește {amount} {item}(s) în inventarul tau"
+        "missing": "Îți lipsește {amount} {item}(s) în inventarul tau",
+        "disabled": "The item you tried using is currently disabled. Please come back later!"
     },
     "wrong_id": "ID-ul care l-ai provenit este incorect. Te rugam sa verifici încă o data",
     "words": {
