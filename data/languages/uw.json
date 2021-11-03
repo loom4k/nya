@@ -31,7 +31,8 @@
     "item": {
         "cosmetic": "That item can't be uwsed. It's cwosmetic",
         "no_item": "U don't have any of these in your inventowy",
-        "missing": "U are mwissing {amount} {item}(s) in ur inventowy"
+        "missing": "U are mwissing {amount} {item}(s) in ur inventowy",
+        "disabled": "The item you tried using is currently disabled. Please come back later!"
     },
     "wrong_id": "The IB you pwovided is incowwect. Pweeease check the spelling",
     "words": {
