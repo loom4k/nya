@@ -31,7 +31,8 @@
     "item": {
         "cosmetic": "Den genstand kan ikke blive brugt. Det er en kosmetisk genstand",
         "no_item": "Du har ikke nogle af disse i dit inventar",
-        "missing": "Du mangler {amount} {item}(s) i dit inventar"
+        "missing": "Du mangler {amount} {item}(s) i dit inventar",
+        "disabled": "The item you tried using is currently disabled. Please come back later!"
     },
     "wrong_id": "The ID you provided is incorrect. Please check the spelling",
     "words": {
