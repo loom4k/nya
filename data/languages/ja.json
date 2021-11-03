@@ -1,22 +1,22 @@
 {
     "error": "このコマンドの実行中にエラーが発生しました。開発者に報告してください!",
-    "new_language": "The language of this guild is now set to {language}",
+    "new_language": "このギルドの言語が「{language}」に設定されました。",
     "ping_message": "The ping of the client is {ping}ms.",
     "on_cooldown": "This command is on cooldown!",
     "ready_in": "You'll be able to use it again in {time}",
     "no_lang": "This language is not enabled, yet!",
     "inventory_title": "{user}'s Inventory",
     "bot_stats": {
-        "developers": "Developers",
-        "channels": "Channels",
-        "users": "Users",
-        "guilds": "Guilds",
-        "ram": "RAM Usage",
-        "api": "API Latency"
+        "developers": "開発者",
+        "channels": "チャンネル",
+        "users": "ユーザー",
+        "guilds": "ギルド",
+        "ram": "メモリ使用量",
+        "api": "APIレイテンシー"
     },
     "economy": {
-        "cod": "cods",
-        "worked": "You worked an hour at your restaurant and made {money}!"
+        "cod": "コッド",
+        "worked": "あなたは自分のレストランで1時間働いて、「{money}」を稼いだのです!"
     },
     "restaurant": {
         "new_name": "The new name of your restaurant is: {name}",
