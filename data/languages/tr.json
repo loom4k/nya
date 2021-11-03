@@ -48,11 +48,11 @@
         "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
     },
     "profile": {
-        "title": "{user}'s Profile",
-        "description": "This is the profile of {user}. You can see his wallet, chef name, and more about his little restaurant!",
+        "title": "{user} Kullanıcısının Profli",
+        "description": "Bu {user} kullanıcısının profili. Burada onun cüzdanını, şef adını ve onun küçük restoranı hakkında daha bir çok bilgiyi görebilirsin!",
         "cookname": "Cook name",
         "wallet": "Cod Wallet",
-        "level": "Level",
-        "restaurant_name": "Restaurant Name"
+        "level": "Seviye",
+        "restaurant_name": "Restoran Adı"
     }
 }
