@@ -1,18 +1,18 @@
 {
-    "error": "There was an error while trying to execute this command. You can report it to the developers",
-    "new_language": "The language of this guild is now set to {language}",
-    "ping_message": "The ping of the client is {ping}ms.",
-    "on_cooldown": "This command is on cooldown!",
-    "ready_in": "You'll be able to use it again in {time}",
-    "no_lang": "This language is not enabled, yet!",
-    "inventory_title": "{user}'s Inventory",
+    "error": "Aici a fost o eroare in timp ce încercam sa executam comanda asta. Poti reporta asta developerilor",
+    "new_language": "Limba guildului este setat la {language}",
+    "ping_message": "Pingul clientului este {ping}ms.",
+    "on_cooldown": "Trebuie sa aștepți pentru a executa comanda asta!",
+    "ready_in": "Vei putea sa îl folosești din nou in {time}",
+    "no_lang": "Limba asta nu este activată!",
+    "inventory_title": "Inventarul {user}",
     "bot_stats": {
-        "developers": "Developers",
-        "channels": "Channels",
-        "users": "Users",
-        "guilds": "Guilds",
-        "ram": "RAM Usage",
-        "api": "API Latency"
+        "developers": "Developeri",
+        "channels": "Canale",
+        "users": "Utilizatori",
+        "guilds": "Guilduri",
+        "ram": "Utilizare RAM",
+        "api": "Latența API"
     },
     "economy": {
         "cod": "cods",
