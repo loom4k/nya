@@ -1,5 +1,5 @@
 {
-    "error": "There was an error while trying to execute this command. You can report it to the developers",
+    "error": "このコマンドの実行中にエラーが発生しました。開発者に報告してください!",
     "new_language": "The language of this guild is now set to {language}",
     "ping_message": "The ping of the client is {ping}ms.",
     "on_cooldown": "This command is on cooldown!",
