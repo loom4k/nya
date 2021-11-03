@@ -27,14 +27,14 @@ module.exports = class NyaClient extends Client {
         this.partials = ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER']
         this.slashCommands = new Collection()
         this.events = new Collection()
+        this.Timeout = new Collection()
         this.utils = require('./utils/utils')
         this.utils = new Util(this)
+        this.Chatbot = new Chatbot({ name: "Nya", gender: "female" })
         this.config = require('./config.json')
         this.emoji = require('./data/emoji')
         this.colors = require('./data/colors')
-        this.Timeout = new Collection()
         this.Database = require('./database/mongoose')
-        this.Chatbot = new Chatbot({ name: "Nya", gender: "female" })
     }
 
     validate(options) {

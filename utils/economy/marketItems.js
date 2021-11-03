@@ -1,5 +1,6 @@
 module.exports = [{
         name: `Tuna`,
+        enabled: false,
         description: `Tuna? Sounds like a not so bad fish`,
         id: `tuna`,
         price: 10000,
@@ -12,6 +13,7 @@ module.exports = [{
     },
     {
         name: "Salmon",
+        enabled: false,
         description: "Salmon, the king of the ocean. Ok maybe not.",
         id: "salmon",
         price: 25000,

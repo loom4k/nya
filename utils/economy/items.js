@@ -1,5 +1,6 @@
 module.exports = [{
         name: `Cookie`,
+        enabled: true,
         description: `Cookie! The best thing on earth`,
         id: `cookie`,
         price: 50,
@@ -14,6 +15,7 @@ module.exports = [{
     },
     {
         name: "Frying Pan",
+        enabled: true,
         description: "Provides your kitchen a 2x money boost for 24 hours.",
         id: "pan",
         price: 2500,
@@ -23,7 +25,7 @@ module.exports = [{
             "Amazing! You now have a 2x income boost! Work, quick!",
             "Such a cool item. I hope I can get the most of it"
         ],
-        type: "Booster",
+        type: "Special",
         emoji: "<:fryingpan:904473939089186887>"
     }
 ]

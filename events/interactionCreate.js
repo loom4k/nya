@@ -17,7 +17,7 @@ module.exports = class extends Event {
         data.guild = guildData
         data.user = userData
         data.lang = langData
-        module.exports = { data }
+
         const cmd = this.client.slashCommands.get(interaction.commandName)
         try {
             let cmdCooldown = cmd.cooldown || 5
