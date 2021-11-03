@@ -15,12 +15,12 @@
         "api": "Latența API"
     },
     "economy": {
-        "cod": "cods",
-        "worked": "You worked an hour at your restaurant and made {money}!"
+        "cod": "pești",
+        "worked": "Ai lucrat o ora la restaurantul tau și ai făcut {money}!"
     },
     "restaurant": {
-        "new_name": "The new name of your restaurant is: {name}",
-        "new_cook": "Your new cook name is: {name}",
+        "new_name": "Noul nume al restaurantului tau este: {name}",
+        "new_cook": "Numele noului tău bucatar este: {name}",
         "description": {
             "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
             "name": "Restaurant Name",
