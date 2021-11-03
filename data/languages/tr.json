@@ -1,50 +1,50 @@
 {
     "error": "Bu komutu çalıştırırken bir hata oluştu. Bu hatayı geliştiricilere bildirebilirsiniz",
-    "new_language": "The language of this guild is now set to {language}",
-    "ping_message": "The ping of the client is {ping}ms.",
+    "new_language": "Sunucunun dili {language} olarak ayarlandı.",
+    "ping_message": "Botun gecikmesi {ping}ms.",
     "on_cooldown": "Bu komutu kullanmak için biraz beklemelisin!",
-    "ready_in": "You'll be able to use it again in {time}",
+    "ready_in": "{time} süre sonra tekrar kullanabilirsiniz.",
     "no_lang": "This language is not enabled, yet!",
-    "inventory_title": "{user}'s Inventory",
+    "inventory_title": "{user} Kullanıcısının Envanteri",
     "bot_stats": {
-        "developers": "Developers",
-        "channels": "Channels",
-        "users": "Users",
-        "guilds": "Guilds",
-        "ram": "RAM Usage",
-        "api": "API Latency"
+        "developers": "Geliştiriciler",
+        "channels": "Kanallar",
+        "users": "Kullanıcılar",
+        "guilds": "Sunucular",
+        "ram": "RAM Kullanımı",
+        "api": "API Gecikmesi"
     },
     "economy": {
         "cod": "cods",
-        "worked": "You worked an hour at your restaurant and made {money}!"
+        "worked": "Restoranında bir saat çalıştın ve {money} kazandın!"
     },
     "restaurant": {
-        "new_name": "The new name of your restaurant is: {name}",
-        "new_cook": "Your new cook name is: {name}",
+        "new_name": "Restoranının yeni adı: {name}",
+        "new_cook": "Şefinizin yeni adı: {name}",
         "description": {
             "message": "Here you can find interesting stats about the requested restaurant like entreprise wallet, speciality, xp boosts and more!",
-            "name": "Restaurant Name",
+            "name": "Restoran Adı",
             "speciality": "Speciality",
-            "rName": "{cook}'s Restaurant"
+            "rName": "{cook}'in Restoranı"
         }
     },
     "item": {
-        "cosmetic": "That item can't be used. It's a cosmetic",
-        "no_item": "You don't have any of these in your inventory",
+        "cosmetic": "Bu eşya kullanılamaz. Bu bir kozmetik ürünü.",
+        "no_item": "Envanterinde bundan hiç yok.",
         "missing": "You are missing {amount} {item}(s) in your inventory"
     },
-    "wrong_id": "The ID you provided is incorrect. Please check the spelling",
+    "wrong_id": "Belirttiğiniz ID geçersiz. Lütfen doğru yazmayı deneyin.",
     "words": {
         "used_": "used",
-        "his_": "his"
+        "his_": "onun"
     },
     "store": {
-        "item_buy_indications": "You can procure yourself an item using /buy [item-id]",
+        "item_buy_indications": "Kendinize /buy [item-id] komutu ile bir eşya alabilirsiniz.",
         "convenience_title": "Convenience Store Items",
-        "market_title": "Local Market Items",
-        "not_enough_money": "You are missing some coins to buy this item",
+        "market_title": "Bakkal Eşyaları",
+        "not_enough_money": "Bu eşyayı almak için yeterli miktarda paran yok.",
         "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
-        "success": "Successfull purchase by {user}",
+        "success": "Başarıyla {user} tarafından satın alındı.",
         "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
     },
     "profile": {
