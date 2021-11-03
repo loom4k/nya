@@ -31,7 +31,8 @@
     "item": {
         "cosmetic": "Cet item n'est pas utilisable, il n'est que cosmétique",
         "no_item": "Tu n'as pas cela dans ton inventaire",
-        "missing": "Il te manque {amount} {item}(s) dans ton inventaire"
+        "missing": "Il te manque {amount} {item}(s) dans ton inventaire",
+        "disabled": "The item you tried using is currently disabled. Please come back later!"
     },
     "wrong_id": "L'ID que vous avez entré est incorrect. Vérifier les fautes de frappes",
     "words": {
