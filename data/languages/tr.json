@@ -31,7 +31,8 @@
     "item": {
         "cosmetic": "Bu eşya kullanılamaz. Bu bir kozmetik ürünü.",
         "no_item": "Envanterinde bundan hiç yok.",
-        "missing": "You are missing {amount} {item}(s) in your inventory"
+        "missing": "You are missing {amount} {item}(s) in your inventory",
+        "disabled": "The item you tried using is currently disabled. Please come back later!"
     },
     "wrong_id": "Belirttiğiniz ID geçersiz. Lütfen doğru yazmayı deneyin.",
     "words": {
