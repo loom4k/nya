@@ -1,0 +1,30 @@
+:root {
+    --darkBackground: #18181B;
+}
+
+body {
+    background-color: var(--darkBackground);
+}
+
+@media only screen and (min-width: 1281px) {
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .navItems {
+        margin-right: 75pc;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .navItems {
+        margin-left: 15px;
+        margin-top: 30px;
+    }
+}
+
+.navLogo {
+    width: 45px;
+}

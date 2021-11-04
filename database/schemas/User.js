@@ -10,6 +10,8 @@ module.exports = mongoose.model('User', new mongoose.Schema({
         default: []
     },
 
+    lang: { type: String, default: 'en' },
+
     level: { type: Number, default: 1 },
     cookname: { type: String, default: 'Cat Cook' },
     restaurantname: { type: String, default: 'Nyao!\'s restaurant' },
