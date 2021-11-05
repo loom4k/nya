@@ -1,11 +1,13 @@
 // Importing dependencies
-const { Client, Collection } = require('discord.js')
+const { Client, Collection, WebhookClient } = require('discord.js')
 const Discord = require('discord.js')
 const Util = require('./structures/Util')
 const config = require('./config.json')
 const logger = require('./utils/logger')
 const { token } = require('./utils/variables')
-const Chatbot = require("discord-chatbot");
+const Chatbot = require("discord-chatbot")
+const dbl = require("@top-gg/sdk")
+const webhookURL = process.env['webhookURL']
 
 module.exports = class NyaClient extends Client {
     constructor(options = {}, senty) {

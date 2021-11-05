@@ -15,6 +15,7 @@ const bodyParser = require("body-parser");
 const { readdirSync } = require('fs');
 const { WebhookClient, MessageEmbed } = require('discord.js');
 const mongoose = require('mongoose');
+const db = require('../database/mongoose')
 const moment = require('moment')
 const fs = require('fs');
 
@@ -27,162 +28,173 @@ const app = express();
 app.use(express.static('dashboard/static'));
 
 
-module.exports = async (client) => {
-	const dataDir = path.resolve(`${process.cwd()}${path.sep}dashboard`);
+module.exports = async(client) => {
+    const dataDir = path.resolve(`${process.cwd()}${path.sep}dashboard`);
 
-	const templateDir = path.resolve(`${dataDir}${path.sep}templates`);
-
-
-	passport.serializeUser((user, done) => done(null, user));
-	passport.deserializeUser((obj, done) => done(null, obj));
+    const templateDir = path.resolve(`${dataDir}${path.sep}templates`);
 
 
-	passport.use(new Strategy({
-		clientID: `${clientID}`,
-		clientSecret: `${secret}`,
-		callbackURL: `${domain}/callback`,
-		scope: ["identify", "guilds"]
-	}, (accessToken, refreshToken, profile, done) => {
-		process.nextTick(() => done(null, profile));
-	}));
-
-	app.use(session({
-		secret: 'asdasdasda7734r734753ererfretertdf43534wfefrrrr4awewdasdadadad',
-		resave: true,
-		saveUninitialized: true,
-		store: MongoStore.create({ mongoUrl: jsonconfig.mongodb_url })
-	}));
+    passport.serializeUser((user, done) => done(null, user));
+    passport.deserializeUser((obj, done) => done(null, obj));
 
 
-	// We initialize passport middleware.
-	app.use(passport.initialize());
-	app.use(passport.session());
+    passport.use(new Strategy({
+        clientID: `${clientID}`,
+        clientSecret: `${secret}`,
+        callbackURL: `${domain}/callback`,
+        scope: ["identify", "guilds"]
+    }, (accessToken, refreshToken, profile, done) => {
+        process.nextTick(() => done(null, profile));
+    }));
 
-	app.locals.domain = config.domain.split("//")[1];
-
-	app.engine("html", ejs.renderFile);
-	app.set("view engine", "html");
-
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({
-		extended: true
-	}));
-
-	const renderTemplate = (res, req, template, data = {}) => {
-		var hostname = req.headers.host;
-		var pathname = url.parse(req.url).pathname;
-
-		const baseData = {
-			https: "https://",
-			domain: domain,
-			bot: client,
-			hostname: hostname,
-			pathname: pathname,
-			path: req.path,
-			user: req.isAuthenticated() ? req.user : null,
-			verification: config.verification,
-			description: config.description,
-			url: res,
-			req: req,
-			name: client.username,
-			tag: client.tag,
-		};
-		res.render(path.resolve(`${templateDir}${path.sep}${template}`), Object.assign(baseData, data));
-	};
-
-	const checkAuth = (req, res, next) => {
-		if (req.isAuthenticated()) return next();
-		req.session.backURL = req.url;
-		res.redirect("/login");
-	}
-
-	// Login endpoint.
-	app.get("/login", (req, res, next) => {
-
-		if (req.session.backURL) {
-			req.session.backURL = req.session.backURL;
-
-		} else if (req.headers.referer) {
-
-			const parsed = url.parse(req.headers.referer);
-			if (parsed.hostname === app.locals.domain) {
-				req.session.backURL = parsed.path;
-			}
+    app.use(session({
+        secret: 'asdasdasda7734r734753ererfretertdf43534wfefrrrr4awewdasdadadad',
+        resave: true,
+        saveUninitialized: true,
+        store: MongoStore.create({ mongoUrl: jsonconfig.mongodb_url })
+    }));
 
 
-		} else {
-			req.session.backURL = "/";
-		}
-		// Forward the request to the passport middleware.
-		next();
-	},
-		passport.authenticate("discord"));
+    // We initialize passport middleware.
+    app.use(passport.initialize());
+    app.use(passport.session());
 
-	// Callback endpoint.
-	app.get("/callback", passport.authenticate("discord", {
-		failWithError: true,
-		failureFlash: "There was an error logging you in!",
-		failureRedirect: "/",
-	}), async (req, res) => {
-		try {
+    app.locals.domain = config.domain.split("//")[1];
 
-			if (req.session.backURL) {
+    app.engine("html", ejs.renderFile);
+    app.set("view engine", "html");
 
-				const url = req.session.backURL;
-				req.session.backURL = null;
-				res.redirect(url);
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
 
-			} else {
+    const renderTemplate = (res, req, template, data = {}) => {
+        var hostname = req.headers.host;
+        var pathname = url.parse(req.url).pathname;
 
-				const member = await client.users.fetch(req.user.id);
-				if (member) {
+        const baseData = {
+            https: "https://",
+            domain: domain,
+            bot: client,
+            hostname: hostname,
+            pathname: pathname,
+            path: req.path,
+            user: req.isAuthenticated() ? req.user : null,
+            verification: config.verification,
+            description: config.description,
+            url: res,
+            req: req,
+            name: client.username,
+            tag: client.tag,
+        };
+        res.render(path.resolve(`${templateDir}${path.sep}${template}`), Object.assign(baseData, data));
+    };
 
-					const login = new MessageEmbed()
-						.setColor('GREEN')
-						.setTitle(`Login Logs`)
-						.setDescription(`\nUser: ${member.tag}\`(${member.id})\`\nTime: ${moment(new Date()).format("dddd, MMMM Do YYYY HH:mm:ss")} `);
+    const checkAuth = (req, res, next) => {
+        if (req.isAuthenticated()) return next();
+        req.session.backURL = req.url;
+        res.redirect("/login");
+    }
 
-					loginLogs.send({
-						username: 'Login Logs',
-						embeds: [login]
-					});
-				}
+    async function getUserLang(key) {
+        let user = await db.fetchUser(key)
+        let lang = user.lang
+        let langFile = require(`../data/languages/dashboard/${lang}.json`)
 
-				res.redirect("/");
-			}
-		} catch (err) {
+        return langFile
+    }
 
-			res.redirect('/')
-		}
+    // Login endpoint.
+    app.get("/login", (req, res, next) => {
 
-	});
+            if (req.session.backURL) {
+                req.session.backURL = req.session.backURL;
 
-	app.get("/dashboard", checkAuth, (req, res) => {
-		const server = client.guilds.cache.get('904026551039967312');
-		let user = server.members.cache.has(req.user.id);
+            } else if (req.headers.referer) {
 
-		renderTemplate(res, req, "dashboard.ejs", {
-			perms: Discord.Permissions,
-			userExists: user,
-		});
+                const parsed = url.parse(req.headers.referer);
+                if (parsed.hostname === app.locals.domain) {
+                    req.session.backURL = parsed.path;
+                }
 
-	});
 
-	app.get("/dashboard/:guildID", checkAuth, async (req, res) => {
+            } else {
+                req.session.backURL = "/";
+            }
+            // Forward the request to the passport middleware.
+            next();
+        },
+        passport.authenticate("discord"));
 
-		const guild = client.guilds.cache.get(req.params.guildID);
-		if (!guild) return res.redirect("/dashboard");
-		const member = await guild.members.fetch(req.user.id);
-		if (!member) return res.redirect("/dashboard");
-		if (!member.permissions.has("MANAGE_GUILD")) return res.redirect("/dashboard");
+    // Callback endpoint.
+    app.get("/callback", passport.authenticate("discord", {
+        failWithError: true,
+        failureFlash: "There was an error logging you in!",
+        failureRedirect: "/",
+    }), async(req, res) => {
+        try {
 
-		renderTemplate(res, req, "settings.ejs", {
-			guild: guild,
-			alert: `Dashboard might be a little bit buggy due to discord intent problems.`,
-			nickname: guild.me.nickname || guild.me.user.username,
-		});
+            if (req.session.backURL) {
 
-	});
+                const url = req.session.backURL;
+                req.session.backURL = null;
+                res.redirect(url);
 
-	app.listen(config.port, null, null, () => console.log(`Dashboard up and running on port ${config.port}`))
+            } else {
+
+                const member = await client.users.fetch(req.user.id);
+                if (member) {
+
+                    const login = new MessageEmbed()
+                        .setColor('GREEN')
+                        .setTitle(`Login Logs`)
+                        .setDescription(`\nUser: ${member.tag}\`(${member.id})\`\nTime: ${moment(new Date()).format("dddd, MMMM Do YYYY HH:mm:ss")} `);
+
+                    loginLogs.send({
+                        username: 'Login Logs',
+                        embeds: [login]
+                    });
+                }
+
+                res.redirect("/");
+            }
+        } catch (err) {
+
+            res.redirect('/')
+        }
+
+    });
+
+    app.get("/my", checkAuth, async(req, res) => {
+        const server = client.guilds.cache.get('904026551039967312');
+        let user = server.members.cache.has(req.user.id);
+
+        let lang = await getUserLang(req.user.id)
+
+        renderTemplate(res, req, "dashboard.ejs", {
+            perms: Discord.Permissions,
+            userExists: user,
+            lang: lang,
+        });
+
+    });
+
+    app.get("/my/:guildID", checkAuth, async(req, res) => {
+
+        const guild = client.guilds.cache.get(req.params.guildID);
+        if (!guild) return res.redirect("/my");
+        const member = await guild.members.fetch(req.user.id);
+        if (!member) return res.redirect("/my");
+        if (!member.permissions.has("MANAGE_GUILD")) return res.redirect("/my");
+
+        renderTemplate(res, req, "settings.ejs", {
+            guild: guild,
+            alert: `Dashboard might be a little bit buggy due to discord intent problems.`,
+            nickname: guild.me.nickname || guild.me.user.username,
+        });
+
+    });
+
+    app.listen(config.port, null, null, () => console.log(`Dashboard up and running on port ${config.port}`))
 }

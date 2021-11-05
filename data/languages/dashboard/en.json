@@ -1,3 +1,7 @@
 {
-    "test": "hihi"
+    "select_server": "SELECT A SERVER",
+    "hey_user": "Hey {user}!",
+    "home": "Home",
+    "logout": "Logout",
+    "support": "Support"
 }

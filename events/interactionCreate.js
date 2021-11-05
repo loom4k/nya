@@ -1,6 +1,8 @@
 const Event = require('../structures/Event')
 const logger = require('../utils/logger')
 const ms = require('ms')
+const config = require('../config.json')
+const metrics = require('datadog-metrics')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = class extends Event {
