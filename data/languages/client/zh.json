@@ -1,0 +1,59 @@
+{
+    "error": "您输入的指令发生了错误。 您可以把这个错误汇报给制作者。",
+    "new_language": "这个服务器的语言已更换到",
+    "ping_message": "这个用户的延迟是 {ping}毫秒。",
+    "on_cooldown": "这个命令在冷却中！",
+    "ready_in": "您需要等 {time} 才能再使用这个。",
+    "no_lang": "目前尚不支持该语言.",
+    "inventory_title": "{user} 的物品栏",
+    "bot_stats": {
+        "developers": "开发人员",
+        "channels": "频道",
+        "users": "用户",
+        "guilds": "服务器",
+        "ram": "内存用量",
+        "api": "API 延迟"
+    },
+    "economy": {
+        "cod": "鳕鱼",
+        "worked": "您在餐厅工作了一个小时并获得了 {money}!"
+    },
+    "restaurant": {
+        "new_name": "您餐厅的新名字是： {name}",
+        "new_cook": "您新的厨师的名字是： {name}",
+        "description": {
+            "message": "您可以在这里找到很多您餐厅的信息， 比如您的资产， 专业， 经验提升， 还有其他有意思的信息!",
+            "name": "餐厅名字",
+            "speciality": "专业",
+            "rName": "{cook} 的餐厅"
+        }
+    },
+    "item": {
+        "cosmetic": "该物品不能使用。它是个装饰性物品",
+        "no_item": "您物品栏里没有这个物品。",
+        "missing": "您物品栏里还缺少 {amount} {item}(s)。",
+        "disabled": "您尝试使用的物品目前已禁用。请稍后再回来！"
+    },
+    "wrong_id": "您提供的ID不正确。请检查拼写",
+    "words": {
+        "used_": "使用了",
+        "his_": "他的"
+    },
+    "store": {
+        "item_buy_indications": "您可以使用 /buy [item-id] 来购买一些物品。",
+        "convenience_title": "便利店物品",
+        "market_title": "市场物品",
+        "not_enough_money": "您没有足够的钱去买这个物品。",
+        "not_enough": "您没有足够的鳕鱼来买 {amount} {item}(s)。",
+        "success": "{user} 购买了这个物品",
+        "bought": "{user} 用了 **{cost}** 条鳕鱼买了 **{amount}(s)** 个。"
+    },
+    "profile": {
+        "title": "{user} 的简介",
+        "description": "这是 {user} 的简介。 您可以看到他的钱包， 厨师名字， 和其他关于他的餐厅的信息！",
+        "cookname": "厨师名字",
+        "wallet": "鳕鱼总量",
+        "level": "等级",
+        "restaurant_name": "餐厅名字"
+    }
+}

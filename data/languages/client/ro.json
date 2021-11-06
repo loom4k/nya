@@ -1,0 +1,61 @@
+
+
+{
+    "error": "A apărut o eroare la încercarea de a executa această comandă. Îl poți raporta dezvoltatorilor",
+    "new_language": "Limba guildului este acum setat la {language}",
+    "ping_message": "Pingul clientului este {ping}ms.",
+    "on_cooldown": "Această comandă este în modul pauză!",
+    "ready_in": "Vei putea sa îl folosești din nou in {time}",
+    "no_lang": "Limba asta nu este activată!",
+    "inventory_title": "Inventarul {user}",
+    "bot_stats": {
+        "developers": "Developeri",
+        "channels": "Canale",
+        "users": "Utilizatori",
+        "guilds": "Guilduri",
+        "ram": "Utilizare RAM",
+        "api": "Latența API"
+    },
+    "economy": {
+        "cod": "pești",
+        "worked": "Ai lucrat o ora la restaurantul tau și ai făcut {money}!"
+    },
+    "restaurant": {
+        "new_name": "Noul nume al restaurantului tau este: {name}",
+        "new_cook": "Numele noului tău bucatar este: {name}",
+        "description": {
+            "message": "Aici puteți găsi statistici interesante despre restaurantul solicitat, cum ar fi portofelul companiei, specialitatea, boosturile xp și multe altele!",
+            "name": "Numele Restaurantului",
+            "speciality": "Specialitate",
+            "rName": "Restaurantul lui {cook}"
+        }
+    },
+    "item": {
+        "cosmetic": "Lucrul acesta nu se poate folosi. E un cosmetic",
+        "no_item": "Nu ai acest lucru în inventarul tau",
+        "missing": "Îți lipsește {amount} {item}(s) în inventarul tau",
+        "disabled": "Elementul pe care ai încercat să-l folosești este momentan dezactivat. Revino mai târziu!"
+    },
+    "wrong_id": "ID-ul care l-ai provenit este incorect. Te rugam sa verifici încă o data",
+    "words": {
+        "used_": "folosit",
+        "his_": "a lui"
+    },
+    "store": {
+        "item_buy_indications": "Vă puteți procura un articol folosind /buy [item-id]",
+        "convenience_title": "Articole pentru magazinul universal",
+        "market_title": "Articole din piața locală",
+        "not_enough_money": "Îți lipsesc niște bănuți pentru a putea cumpara articolul ăsta",
+        "not_enough": "Nu ai destui pesti pentru a cumpara {amount} {item}",
+        "success": "Achiziție reușita de {user}",
+        "bought": "{user} a cumparat **{amount}** pentru un total de **{cost}** pesti"
+    },
+    "profile": {
+        "title": "Profilul lui {user}",
+        "description": "Acesta este profilul lui {user}. Poți vedea portofelul lui, numele chefului, și multe lucruri despre restaurantul lui mic!",
+        "cookname": "Numele Bucătarului",
+        "wallet": "Portofelul de peste",
+        "level": "Nivel",
+        "restaurant_name": "Numele Restaurantului"
+    }
+}
