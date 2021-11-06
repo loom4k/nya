@@ -35,6 +35,7 @@
         "passport-discord": "^0.1.4",
         "path": "^0.12.7",
         "string-width": "^5.0.1",
+        "topgg-autoposter": "^2.0.0",
         "uniqid": "^5.4.0",
         "url": "^0.11.0",
         "util": "^0.12.4",

@@ -4,10 +4,9 @@ const Discord = require('discord.js')
 const Util = require('./structures/Util')
 const config = require('./config.json')
 const logger = require('./utils/logger')
-const { token } = require('./utils/variables')
+const { token, topgg } = require('./utils/variables')
 const Chatbot = require("discord-chatbot")
-const dbl = require("@top-gg/sdk")
-const webhookURL = process.env['webhookURL']
+const { AutoPoster } = require('topgg-autoposter')
 
 module.exports = class NyaClient extends Client {
     constructor(options = {}, senty) {
@@ -49,6 +48,11 @@ module.exports = class NyaClient extends Client {
     }
 
     async start(token = this.token) {
+        /*AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg5NDcyOTI4ODMzNzczMTY0NSIsImJvdCI6dHJ1ZSwiaWF0IjoxNjM2MTUyMzUxfQ.b9vRCNE-tUa29Q3haZtKVVBCCCv2NfenSafUZmrU6J0', this)
+            .on('posted', () => {
+                console.log('Posted stats to Top.gg!')
+            })*/
+
         this.utils.loadEvents()
 
         .catch(e => console.log(e))
