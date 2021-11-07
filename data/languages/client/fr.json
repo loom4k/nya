@@ -34,7 +34,12 @@
         "cosmetic": "Cet item n'est pas utilisable, il n'est que cosmétique",
         "no_item": "Tu n'as pas cela dans ton inventaire",
         "missing": "Il te manque {amount} {item}(s) dans ton inventaire",
-        "disabled": "L'objet que vous essayez d'utiliser est actuellement désactivé. Veuillez revenir plus tard !"
+        "disabled": "L'objet que vous essayez d'utiliser est actuellement désactivé. Veuillez revenir plus tard !",
+        "want_to_use": "Êtes-vous sûr de vouloir utiliser cet item?",
+        "cancel": "L'item n'a pas été utilisé et fût replacé dans votre inventaire.",
+        "speciality": {
+            "lower_level": "La spécialité de ton restaurant à déja un niveau plus élevé que celui ci, est-tu sûr de vouloir le remplacer?"
+        }
     },
     "wrong_id": "L'ID que vous avez entré est incorrect. Vérifier les fautes de frappes",
     "words": {

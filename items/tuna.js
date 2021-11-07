@@ -112,10 +112,6 @@ module.exports = {
                             await interaction.deleteReply()
                         }
                     });
-
-                    collector.on('end', () => {
-                        interaction.deleteReply()
-                    })
                 } catch(e) {
                     console.log(e)
                 }

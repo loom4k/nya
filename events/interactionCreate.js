@@ -4,6 +4,9 @@ const ms = require('ms')
 const config = require('../config.json')
 const metrics = require('datadog-metrics')
 const { MessageEmbed } = require('discord.js')
+const progressbar = require('./../utils/string-progressbar/index');
+
+const calculate = (a, b, d) => (a * d) / b
 
 module.exports = class extends Event {
     async run(interaction) {
@@ -29,10 +32,15 @@ module.exports = class extends Event {
                 const cooldown = cmdCooldown * 1000
                 if (cmdCooldown) {
                     if (this.client.Timeout.has(`${cmd.name}${interaction.user.id}`)) {
+                        let time1 = this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now()
+                        let value = calculate( time1, cmdCooldown, 10 )
+                        const bar = progressbar.filledBar(50, value / 200, 15)
+
                         let cooldownEmbed = new MessageEmbed()
                             .setTitle(data.lang.on_cooldown)
-                            .setDescription(`${data.lang.ready_in.replace('{time}', ms(this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now(), { long: true }))}`)
+                            .setDescription(`${data.lang.ready_in.replace('{time}', ms(this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now(), { long: true }))} \n\n${bar.toString()}`)
                             .setColor(this.client.colors.redish)
+
                         return interaction.reply({ embeds: [cooldownEmbed], ephemeral: true })
                     } else {
                         this.client.Timeout.set(`${cmd.name}${interaction.user.id}`, Date.now() + cooldown)
