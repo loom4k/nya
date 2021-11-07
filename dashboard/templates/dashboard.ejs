@@ -12,7 +12,7 @@
 <body>
         <div class="blur" id="body-blur"></div>
         <div class="content">
-            <h2>SELECT A SERVER</h2>
+            <h2><%= __('select_server') %></h2>
             <% if (!userExists) { %>
                 <div style="width: 512px;
 	 padding: 16px;
@@ -20,13 +20,11 @@
                     <h3 style="color: rgb(255, 192, 203); 	 margin-top: 0;
 	 margin-bottom: 8px;
 	 font-size: 18px;
-	 font-family: 'Poppins', sans-serif;">Hey
-                        <%= user.username %>!
-                    </h3>
+	 font-family: 'Poppins', sans-serif;"><%= __('hey_user').replace('{user}', user.username) %></h3>
                     <p style="margin: 0;
 	 font-size: 14px;
 	 font-family: 'Open Sans', sans-serif;
-	 color: #555;">Looks like you aren't in Nya's Support Server. <a href="/support">Join Here!</a></p>
+	 color: #555;"><%= __('not_in_support_server') %><a href="/support"> <%= __('join_here') %></a></p>
                 </div>
                 <% } %>
                     <div class="servers">
@@ -42,9 +40,9 @@
                                         </p>
                                 </div>
                                 <% if (bot.guilds.cache.get(guild.id)) { %>
-                                    <a href='/my/<%= guild.id %>' class="edit button">Dashboard</a>
+                                    <a href='/my/<%= guild.id %>' class="edit button"><%= __('dashboard') %></a>
                                     <% } else { %>
-                                        <a href='https://discordapp.com/oauth2/authorize?client_id=767705905235099658&amp;scope=bot&amp;guild_id=905893957685366814&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fpogy.xyz%2Fwindow&amp;permissions=490073207' class="add button">Add Bot</a>
+                                        <a href='https://discordapp.com/oauth2/authorize?client_id=767705905235099658&amp;scope=bot&amp;guild_id=905893957685366814&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fpogy.xyz%2Fwindow&amp;permissions=490073207' class="add button"><%= __('add_bot') %></a>
                                         <% } %>
                             </div>
                             <% }) %>

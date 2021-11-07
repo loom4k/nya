@@ -19,6 +19,8 @@ const db = require('../database/mongoose')
 const moment = require('moment')
 const fs = require('fs');
 
+const i18n = require('i18n')
+
 //important 
 const domain = config.domain;
 const clientID = config.client_id;
@@ -69,6 +71,9 @@ module.exports = async(client) => {
         extended: true
     }));
 
+    // Redirects
+    app.get('/my', (req, res) => { res.redirect('/en/my') })
+
     const renderTemplate = (res, req, template, data = {}) => {
         var hostname = req.headers.host;
         var pathname = url.parse(req.url).pathname;
@@ -104,6 +109,19 @@ module.exports = async(client) => {
 
         return langFile
     }
+
+    let funkyObject = {}
+    
+    i18n.configure({
+        locales: ['en', 'de', 'fr'],
+        defaultLocale: 'en',
+        fallbacks: {'fr': 'en'},
+        register: funkyObject,
+        directory: path.join(process.cwd(), 'data/languages/dashboard'),
+        updateFiles: false,
+    })   
+
+    app.use(i18n.init)
 
     // Login endpoint.
     app.get("/login", (req, res, next) => {
@@ -166,7 +184,8 @@ module.exports = async(client) => {
 
     });
 
-    app.get("/my", checkAuth, async(req, res) => {
+    app.get("/:lang/my", checkAuth, async(req, res) => {
+        i18n.setLocale(req, req.params.lang)
         const server = client.guilds.cache.get('904026551039967312');
         let user = server.members.cache.has(req.user.id);
 
@@ -180,8 +199,8 @@ module.exports = async(client) => {
 
     });
 
-    app.get("/my/:guildID", checkAuth, async(req, res) => {
-
+    app.get("/:lang/my/:guildID", checkAuth, async(req, res) => {
+        i18n.setLocale(req, req.params.lang)
         const guild = client.guilds.cache.get(req.params.guildID);
         if (!guild) return res.redirect("/my");
         const member = await guild.members.fetch(req.user.id);

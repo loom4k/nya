@@ -12,3 +12,12 @@ i18n.configure({
     // Set a custom cookie name to parse locale settings from - default to NULL
     cookie: 'lang'
 })
+
+module.exports = function(req, res, next) {
+    i18n.init(req, res)
+    res.local('__', res.__)
+
+    let current_locale = i18n.getLocale()
+
+    return next()
+}

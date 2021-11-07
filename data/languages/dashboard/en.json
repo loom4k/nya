@@ -1,7 +1,8 @@
 {
-    "select_server": "SELECT A SERVER",
+    "select_server": "Select a Server",
+    "not_in_support_server": "Looks like you aren't in Nya's Support Server.",
+    "join_here": "Join Here!",
     "hey_user": "Hey {user}!",
-    "home": "Home",
-    "logout": "Logout",
-    "support": "Support"
+    "dashboard": "Dashboard",
+    "add_bot": "Add Bot"
 }
