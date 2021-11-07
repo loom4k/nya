@@ -16,6 +16,7 @@ module.exports = mongoose.model('User', new mongoose.Schema({
     cookname: { type: String, default: 'Cat Cook' },
     restaurantname: { type: String, default: 'Nyao!\'s restaurant' },
     speciality: { type: String, default: 'Cod' },
+    specialityLevel: { type: Number, default: 1 },
 
     timeDoublePay: { type: Number, default: Date.now() }
 }))

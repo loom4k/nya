@@ -1,0 +1,61 @@
+
+
+{
+    "error": "Es gab einen Fehler beim Ausführen dieses Commands. Du kannst ihn den Entwicklern melden",
+    "new_language": "Die Sprache dieses Servers ist jetzt {language}",
+    "ping_message": "Mein Ping ist {ping}ms.",
+    "on_cooldown": "Dieser Command ist auf Abklingzeit!",
+    "ready_in": "Du kannst ihn wieder in {time} benutzen",
+    "no_lang": "Diese Sprache ist nicht noch nicht freigegeben!",
+    "inventory_title": "{user}'s Inventar",
+    "bot_stats": {
+        "developers": "Entwickler",
+        "channels": "Kanäle",
+        "users": "User",
+        "guilds": "Server",
+        "ram": "Aufgebrauchter RAM",
+        "api": "API Latenz"
+    },
+    "economy": {
+        "cod": "Kabeljau",
+        "worked": "Du hast eine Stunde im Restaurant gearbeitet und bekommst"
+    },
+    "restaurant": {
+        "new_name": "Der neue Name deines Restaurants ist",
+        "new_cook": "Der neue Name deines Koches ist",
+        "description": {
+            "message": "Hier kannst du interessante Statistiken über das angeforderte Restaurant wie die Enterprise-Wallet, Spezialität, XP-Boosts und mehr finden!",
+            "name": "Name des Restaurants",
+            "speciality": "Spezialität",
+            "rName": "{cook}'s Restaurant"
+        }
+    },
+    "item": {
+        "cosmetic": "Dieses Item kann nicht benutzt werden. Es ist ein Kosmetik-Item",
+        "no_item": "Du hast keine von denen in deinem Inventar",
+        "missing": "Dir fehlen {amount} {item}(s) in deinem Inventar",
+        "disabled": "Dieses Item ist im Moment deaktiviert. Bitte versuche es später noch einmal!"
+    },
+    "wrong_id": "Die ID, welche du vorausgesetzt hast, ist inkorrekt. Bitte überprüfe deine Rechtschreibung",
+    "words": {
+        "used_": "benutzt",
+        "his_": "sein"
+    },
+    "store": {
+        "item_buy_indications": "Du kannst dir ein Item mit /buy [item-id] beschaffen",
+        "convenience_title": "Annehmlichkeits-Item Laden",
+        "market_title": "Lokale Markt Items",
+        "not_enough_money": "Dir fehlen ein paar Münzen um dieses Item zu kaufen",
+        "not_enough": "Du hast nicht genügend Kabeljau um {amount}{item}(s) zu kaufen",
+        "success": "Erfolgreicher Kauf von {user}",
+        "bought": "{user} hat **{amount}(s)** für **{cost}** Kabeljau gekauft"
+    },
+    "profile": {
+        "title": "{user}'s Profil",
+        "description": "Dies ist das Profil von {user}. Du kannst seine Geldbörse, Chefnamen und mehr über sein / ihr Restaurant erfahren!",
+        "cookname": "Name des Koches",
+        "wallet": "Kabeljau-Geldbörse",
+        "level": "Level",
+        "restaurant_name": "Name des Restaurants"
+    }
+}
