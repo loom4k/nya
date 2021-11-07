@@ -49,8 +49,8 @@ module.exports = {
      */
     run: async(client, interaction, data) => {
         if (interaction.options.getString('language') == 'es') return interaction.followUp({ content: data.lang.no_lang, ephemeral: true })
-        data.guild.lang = interaction.options.getString('language')
-        await data.guild.save()
-        interaction.followUp({ content: `${data.lang.new_language.replace('{language}', '\`' + data.guild.lang + '\`')}` })
+        data.user.lang = interaction.options.getString('language')
+        await data.user.save()
+        interaction.followUp({ content: `${data.lang.new_language.replace('{language}', '\`' + data.user.lang + '\`')}` })
     },
 };
