@@ -1,5 +1,6 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
 const mongoose = require('../../database/mongoose')
+const level = require('../../utils/level')
 
 module.exports = {
     name: "User Profile",
@@ -13,6 +14,7 @@ module.exports = {
     run: async(client, interaction, data) => {
         let user = await mongoose.fetchUser(interaction.targetId)
         let member = await client.users.cache.get(interaction.targetId)
+        let userLevel = await level(user.id)
         const embed = new MessageEmbed()
             .setTitle(data.lang.profile.title.replace('{user}', member.username))
             .setDescription(data.lang.profile.description.replace('{user}', member.username))
@@ -26,7 +28,7 @@ module.exports = {
                 inline: true
             }, {
                 name: data.lang.profile.level,
-                value: `\`\`\`${user.level}\`\`\``,
+                value: `\`\`\`${userLevel.toLocaleString()}\`\`\``,
                 inline: true
             }, {
                 name: data.lang.profile.restaurant_name,

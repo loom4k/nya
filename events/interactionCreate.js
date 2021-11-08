@@ -5,6 +5,7 @@ const config = require('../config.json')
 const metrics = require('datadog-metrics')
 const { MessageEmbed } = require('discord.js')
 const progressbar = require('./../utils/string-progressbar/index');
+const { datadog } = require('../utils/variables')
 
 const calculate = (a, b, d) => (a * d) / b
 
@@ -28,6 +29,11 @@ module.exports = class extends Event {
         const cmd = this.client.slashCommands.get(interaction.commandName)
         if (interaction.isCommand() || interaction.isContextMenu()) {
             try {
+                if (datadog == true) {
+                    metrics.init({ apiKey: config.datadogApiKey, host: 'Nya', prefix: 'nya.' })
+                    metrics.increment('interaction_ran');
+                }
+
                 let cmdCooldown = cmd.cooldown || 5
                 const cooldown = cmdCooldown * 1000
                 if (cmdCooldown) {

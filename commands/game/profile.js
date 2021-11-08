@@ -1,4 +1,5 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const level = require('../../utils/level')
 
 module.exports = {
     name: "profile",
@@ -12,6 +13,7 @@ module.exports = {
      */
     run: async(client, interaction, data) => {
         try {
+            let userLevel = await level(interaction.user.id)
             const embed = new MessageEmbed()
                 .setTitle(data.lang.profile.title.replace('{user}', interaction.user.username))
                 .setDescription(data.lang.profile.description.replace('{user}', interaction.user.username))
@@ -25,7 +27,7 @@ module.exports = {
                     inline: true
                 }, {
                     name: data.lang.profile.level,
-                    value: `\`\`\`${data.user.level}\`\`\``,
+                    value: `\`\`\`${userLevel.toLocaleString()}\`\`\``,
                     inline: true
                 }, {
                     name: data.lang.profile.restaurant_name,
