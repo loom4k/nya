@@ -38,25 +38,25 @@ module.exports = {
 
             var randomNumber = Math.floor(Math.random() * item.used.length)
 
-            if(data.user.specialityLevel >= 2) {
+            if (data.user.specialityLevel >= 2) {
                 try {
                     const row = new MessageActionRow()
-                    .addComponents(
-                        new MessageButton()
+                        .addComponents(
+                            new MessageButton()
                             .setCustomId('use')
                             .setLabel(data.labels.use)
                             .setStyle(3),
-                        new MessageButton()
+                            new MessageButton()
                             .setCustomId('cancel')
                             .setLabel(data.labels.cancel)
                             .setStyle(4),
-                    );
+                        );
 
                     const toUseEmbed = new MessageEmbed()
                         .setColor(client.colors.redish)
                         .setAuthor(`${data.lang.item.want_to_use}`)
                         .setDescription(data.lang.item.speciality.lower_level)
-                        
+
                     interaction.followUp({ embeds: [toUseEmbed], components: [row] })
 
                     const filter = i => i.user.id === interaction.member.id;
@@ -68,7 +68,7 @@ module.exports = {
                         .setAuthor(interaction.user.tag + ` ${data.lang.words.used_} ${data.lang.words.his_} ` + itemName)
                         .setDescription(`${interaction.user} ${data.lang.words.used_} **${amount.toLocaleString()} ${itemName}(s)**!\n\n*${item.used[randomNumber]}*`)
                         .setTimestamp(Date.now())
-                    
+
                     const cancelEmbed = new MessageEmbed()
                         .setColor(client.colors.redish)
                         .setDescription(data.lang.item.cancel)
@@ -102,17 +102,17 @@ module.exports = {
                                     upsert: true
                                 })
                             }
-                            data.user.speciality = 'tuna'
+                            data.user.speciality = 'Tuna'
                             data.user.specialityLevel = 2
                             await data.user.save()
                             await i.reply({ embeds: [usedEmbed], components: [] })
                             await interaction.deleteReply()
-                        } else if(i.customId === 'cancel') {
+                        } else if (i.customId === 'cancel') {
                             await i.reply({ embeds: [cancelEmbed], ephemeral: true, components: [] })
                             await interaction.deleteReply()
                         }
                     });
-                } catch(e) {
+                } catch (e) {
                     console.log(e)
                 }
             } else {
@@ -155,11 +155,11 @@ module.exports = {
                         .setTimestamp(Date.now())
 
                     interaction.followUp({ embeds: [usedEmbed] })
-                } catch(e) {
+                } catch (e) {
                     console.log(e)
                 }
             }
-        } catch(e) {
+        } catch (e) {
             console.log(e)
         }
     }

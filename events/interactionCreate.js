@@ -26,14 +26,14 @@ module.exports = class extends Event {
         data.labels = labelLang
 
         const cmd = this.client.slashCommands.get(interaction.commandName)
-        if(interaction.isCommand()) {
+        if (interaction.isCommand() || interaction.isContextMenu()) {
             try {
                 let cmdCooldown = cmd.cooldown || 5
                 const cooldown = cmdCooldown * 1000
                 if (cmdCooldown) {
                     if (this.client.Timeout.has(`${cmd.name}${interaction.user.id}`)) {
                         let time1 = this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now()
-                        let value = calculate( time1, cmdCooldown, 10 )
+                        let value = calculate(time1, cmdCooldown, 10)
                         const bar = progressbar.filledBar(50, value / 200, 15)
 
                         let cooldownEmbed = new MessageEmbed()
@@ -54,12 +54,12 @@ module.exports = class extends Event {
                             return interaction.followUp({ content: data.lang.error, ephemeral: true })
                         }
                     }
-    
+
                     setTimeout(() => {
                         this.client.Timeout.delete(`${cmd.name}${interaction.user.id}`)
                     }, cooldown)
                 }
-    
+
             } catch (e) {
                 console.log(e)
             }

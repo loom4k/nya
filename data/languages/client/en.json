@@ -50,8 +50,9 @@
         "market_title": "Local Market Items",
         "not_enough_money": "You are missing some coins to buy this item",
         "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
-        "success": "Successfull purchase by {user}",
-        "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod"
+        "success": "Successfull transaction by {user}",
+        "bought": "{user} bought **{amount}(s)** for a total of **{cost}** cod",
+        "sold": "{user} sold **{amount}(s)** for a total of **{cost}** cod"
     },
     "profile": {
         "title": "{user}'s Profile",
