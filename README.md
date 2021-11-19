@@ -1,32 +1,27 @@
-Boost your server engagement with Nya! Have fun with economy, restaurant games and chatbot! Everything in one :D
+# Nya
+Nya is a minigame bot based on Discord's new interactions features. It uses slash commands to interact with the user as well as context menus and buttons.
 
-# Nya! Boost your server
-Nya is one of the best server engagement and game bot available on the platform, it offers great economy features, a very cool mini-game and even a very very dum chatbot! It's based around the new Discord Interactions!
+Nya is open-source, this means anyone can easily contribute and add the features they would like to see in the bot. 
 
-## Start using Nya
+## Running
+Nya runs on [Nodejs 16.13](https://nodejs.org/en/). So make sure you have that installed. If you don't, you can use [Choco](https://chocolatey.org/) or [Node Version Manager (nvm)](https://github.com/coreybutler/nvm-windows) to install it.
 
-You can start by doing `/profile` which will give you access to a little description and stats about your profile. If you wanna modify your restaurant, enter `/restaurant modify`, choose an option and fill in the fields. Finally, to work and gain some money, simply use `/work`. You can explore all the commands by entering `/` and scrolling through the menus. More are on the way! Nya also comes in 5 different languages and more are coming soon! Wait is UwU a language?
+### Dependencies:
+To install required packages like Discord.js and Express, simply run
+```shell
+$ npm install
+```
+And check your `package-lock.json` file to make sure everything is installed.
 
-## Economy
-The world of Nya is based around a coin named the cod. Yes, the fish. It allows you to buy cookies, dozens of differents items as well as boosters for your restaurant! Someone said restaurant?
+### Environnement variables
+Rename both `config.example.json` and `.env.example` to `config.json` and `.env` respectively. You can then fill in the blanks using your development bot token and datadog api keys.
 
-## Restaurant
-Nya includes a very compelete game of restaurant management. You are a cook, (apparently you know how to cook) and you can work every day to earn cod, buy better food to serve your customers, and upgrade your rating *(soon)*
+### Running
+To start the bot, simply run
+```shell
+$ node index.js
+```
+This will start your client. Enjoy!
 
-## Chatbot
-Finally, Nya has a brain. It's not big but it's there. You can talk to her using /chatbot [message] and finally have a friend! Have fun
-
-*Made with love by loom4k#0001 and magma#5090*
-
-## Screenshots
-**Chatbot:**
-
-![Chatbot demonstration](https://i.imgur.com/8lDkByk.png)
-
-**Work:**
-
-![Work demonstration](https://i.imgur.com/KNp8JuL.png)
-
-**4 Different languages:**
-
-![Lang demonstration](https://i.imgur.com/5rw0ecP.png)
+## Contributing
+Fell free to use the basic Github features to contribute and submit your pull requests! If you have any issues with running the bot or experience trouble using the APIs, [create an issue](https://github.com/loom4k/nya/issues/new).
