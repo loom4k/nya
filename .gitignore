@@ -1,5 +1,10 @@
+# Node files and directories
 node_modules/
 package-lock.json
-config.dev.json
+
+# Logging purposes
 assets/logs/Nya.log
+
+# Environnement variables
 .env
+config.json
