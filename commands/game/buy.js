@@ -9,8 +9,8 @@ module.exports = {
     options: [{
         name: "itemid",
         description: "The ID of the item",
-        required: true,
-        type: "STRING"
+        type: "STRING",
+        required: true
     }, {
         name: "amount",
         description: "The amount of item you want to buy",
@@ -19,9 +19,6 @@ module.exports = {
     }],
     run: async(client, interaction, data) => {
         try {
-            const id = interaction.user.id
-            let name;
-
             const itemID = interaction.options.getString("itemid")
             let amount = interaction.options.getInteger("amount")
             let item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
@@ -42,6 +39,7 @@ module.exports = {
 
                 const { inventory } = userFound
 
+                let id = interaction.user.id
                 const hasItem = inventory.find((val) => val.name === item.name)
                 if (!hasItem) {
                     await userSchema.findOneAndUpdate({
