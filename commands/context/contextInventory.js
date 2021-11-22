@@ -4,22 +4,15 @@ const mongoose = require('../../database/mongoose')
 module.exports = {
     name: "Inventory",
     type: 2,
-    run: async(client, interaction, data) => {
+    run: async (client, interaction, data) => {
         try {
-            let user = await mongoose.fetchUser(interaction.targetId)
-            let member = await client.users.cache.get(interaction.targetId)
-            let reply = ``
-
-            for (const item of user.inventory) {
-                const { name, amount, emoji } = item
-
-                reply += `${amount} ${name}(s)\n`
-            }
+            const user = await mongoose.fetchUser(interaction.targetId)
+            const member = await client.users.cache.get(interaction.targetId)
 
             const embed = new MessageEmbed()
                 .setAuthor(data.lang.inventory_title.replace('{user}', member.tag), member.displayAvatarURL({ dynamic: true }))
-                .setDescription(reply)
-                .setColor(client.colors.greeny)
+                .setDescription(user.inventory.map(({ name, amount }) => `${amount} ${name}(s)`).join('\n'))
+                .setColor(client.colors.greeny);
 
             interaction.reply({ embeds: [embed] })
         } catch (e) {
