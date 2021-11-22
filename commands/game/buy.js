@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const items = require("../../utils/economy/items.js")
-let marketItems = require("../../utils/economy/marketItems")
+const marketItems = require("../../utils/economy/marketItems")
 const userSchema = require("../../database/schemas/User")
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
         try {
             const itemID = interaction.options.getString("itemid")
             let amount = interaction.options.getInteger("amount")
-            let item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
+            const item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
 
             if (amount <= 0 || !amount) {
                 amount = 1
@@ -39,7 +39,7 @@ module.exports = {
 
                 const { inventory } = userFound
 
-                let id = interaction.user.id
+                const id = interaction.user.id
                 const hasItem = inventory.find((val) => val.name === item.name)
                 if (!hasItem) {
                     await userSchema.findOneAndUpdate({

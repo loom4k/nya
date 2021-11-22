@@ -15,7 +15,7 @@ function capitalize(string) {
  * @param {*} value
  */
 function removeElement(arr, value) {
-    let index = arr.indexOf(value)
+    const index = arr.indexOf(value)
     if (index > 1) {
         arr.splice(index, 1)
     }
@@ -46,10 +46,13 @@ function trimStringFromArray(arr, maxLen = 2048, joinChar = '\n') {
     let string = arr.join(joinChar)
     const diff = maxLen - 15 // Leaves some room for "And ___ more..."
     if (string.length > maxLen) {
-        string = string.slice(0, string.length - (string.length - diff))
-        string = string.slice(0, string.lastIndexOf(joinChar))
-        string = string + `\nAnd **${arr.length - string.split('\n').length}** more...`
+        string = string
+		  .slice(0, string.length - (string.length - diff))
+          .slice(0, string.lastIndexOf(joinChar));
+		
+        string += `\nAnd **${arr.length - string.split('\n').length}** more...`
     }
+	
     return string
 }
 
@@ -61,7 +64,7 @@ function trimStringFromArray(arr, maxLen = 2048, joinChar = '\n') {
  */
 function getRange(arr, current, interval) {
     const max = (arr.length > current + interval) ? current + interval : arr.length
-    current = current + 1
-    const range = (arr.length == 1 || arr.length == current || interval == 1) ? `[${current}]` : `[${current} - ${max}]`
+    current += 1
+    const range = (arr.length === 1 || arr.length === current || interval === 1) ? `[${current}]` : `[${current} - ${max}]`
     return range
 }

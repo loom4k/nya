@@ -108,7 +108,7 @@ module.exports = async(client) => {
         res.redirect("/login");
     }
 
-    let funkyObject = {}
+    const funkyObject = {}
     
     i18n.configure({
         locales: ['en', 'de', 'fr'],

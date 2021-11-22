@@ -1,22 +1,22 @@
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js")
 const items = require("../utils/economy/items.js")
-let marketItems = require("../utils/economy/marketItems")
+const marketItems = require("../utils/economy/marketItems")
 const userSchema = require("../database/schemas/User")
 
 module.exports = {
     run: async(client, interaction, data) => {
         try {
             const itemID = interaction.options.getString("item")
-            let amount = interaction.options.getInteger("amount") || 1
+            const amount = interaction.options.getInteger("amount") || 1
             const id = interaction.user.id
-            let item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
+            const item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
             if (!item) {
                 return interaction.followUp({ content: data.lang.wrong_id })
             }
 
             const itemName = item.name;
 
-            if (item.useable == false) {
+            if (item.useable === false) {
                 return interaction.followUp({ content: data.lang.item.cannot_be_used })
             }
 
@@ -36,7 +36,7 @@ module.exports = {
                 return interaction.followUp({ content: data.lang.item.missing.replace('{amount}', amount.toLocaleString()).replace('{item}', item.name) })
             }
 
-            var randomNumber = Math.floor(Math.random() * item.used.length)
+            const randomNumber = Math.floor(Math.random() * item.used.length)
 
             if (data.user.specialityLevel >= 2) {
                 try {

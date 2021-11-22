@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const items = require("../../utils/economy/items.js")
-let marketItems = require("../../utils/economy/marketItems")
+const marketItems = require("../../utils/economy/marketItems")
 const userSchema = require("../../database/schemas/User")
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
     run: async(client, interaction, data) => {
         try {
             const id = interaction.user.id
-            let name;
+            const name;
 
             const itemID = interaction.options.getString("itemid")
             const item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);

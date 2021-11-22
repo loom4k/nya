@@ -6,7 +6,7 @@ const mongoose = require('../database/mongoose')
  */
 module.exports = async function(key) {
     const user = await mongoose.fetchUser(key)
-    let level = Math.trunc((((user.currency * (user.specialityLevel / 10))) / 10) / 5)
+    const level = Math.trunc((((user.currency * (user.specialityLevel / 10))) / 10) / 5)
 
     user.level = level
     await user.save()

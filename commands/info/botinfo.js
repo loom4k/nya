@@ -14,8 +14,8 @@ module.exports = {
      */
     run: async(client, interaction, data) => {
         const version = config.version
-        let ram = ((process.memoryUsage().heapUsed / 1024 / 1024) + (process.memoryUsage().heapTotal / 1024 / 1024)).toFixed(2);
-        let embed = {
+        const ram = ((process.memoryUsage().heapUsed / 1024 / 1024) + (process.memoryUsage().heapTotal / 1024 / 1024)).toFixed(2);
+        const embed = {
             color: 'RANDOM',
             author: {
                 name: client.user.username,
