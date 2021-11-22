@@ -14,8 +14,7 @@ module.exports = {
      */
     run: async(client, interaction, data) => {
         try {
-            let amount = Math.round(Math.random() * 250 + 150)
-            let pay = await economy.pay(interaction.user.id, amount) + client.emoji.cod
+            const pay = await economy.pay(interaction.user.id, Math.round(Math.random() * 250 + 150)) + client.emoji.cod
             interaction.editReply({ content: data.lang.economy.worked.replace('{money}', pay) })
         } catch (error) {
             console.log(error)
