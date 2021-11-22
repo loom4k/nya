@@ -26,15 +26,14 @@ module.exports = {
                 `${process.cwd()}/items/*.js`
             );
 
-            itemFiles.map((value) => {
+            itemFiles.forEach((value) => {
                 const file = require(value);
                 if (!file.name) return;
                 client.items.set(file.name, file);
             });
 
             const cmd = require(`../../items/${itemID}.js`)
-
-            await cmd.run(client, interaction, data).catch(e => {})
+            await cmd.run(client, interaction, data).catch(() => {})
         } catch (e) {
             console.log(e)
         }
