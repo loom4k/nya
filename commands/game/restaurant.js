@@ -71,7 +71,7 @@ module.exports = {
                     await data.user.save()
                     interaction.followUp({ content: data.lang.restaurant.new_name.replace('{name}', interaction.options.getString('newname')) });
                     break;
-            }   default:
+                default:
                     data.user.cookname = interaction.options.getString('newcookname')
                     await data.user.save()
                     interaction.followUp({ content: data.lang.restaurant.new_cook.replace('{name}', interaction.options.getString('newcookname')) })
