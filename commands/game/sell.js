@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const items = require("../../utils/economy/items.js")
-let marketItems = require("../../utils/economy/marketItems")
+const marketItems = require("../../utils/economy/marketItems")
 const userSchema = require("../../database/schemas/User")
 
 module.exports = {
@@ -23,12 +23,8 @@ module.exports = {
             let name;
 
             const itemID = interaction.options.getString("itemid")
-            let amount = interaction.options.getInteger("amount")
-            let item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
-
-            if (amount <= 0 || !amount) {
-                amount = 1
-            }
+            const item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
+            const amount = Math.min(Number(interaction.options.getInteger("amount")) || 1, 1);
 
             if (item) {
                 const cost = (item.price * 0.65) * amount
@@ -41,9 +37,7 @@ module.exports = {
                 }
 
                 const { inventory } = userFound
-
-                const hasItem = inventory.find((val) => val.name === item.name)
-                if (!hasItem) {
+                if (!inventory.find((val) => val.name === item.name)) {
                     await userSchema.findOneAndUpdate({
                         id
                     }, {
@@ -80,7 +74,9 @@ module.exports = {
                     .setDescription(data.lang.store.sold.replace('{user}', interaction.user).replace('{amount}', amount.toLocaleString() + ' ' + item.name).replace('{cost}', cost.toLocaleString()))
 
                 interaction.followUp({ embeds: [embed] })
-            } else return interaction.followUp({ content: data.lang.wrong_id })
+            }
+            
+            return interaction.followUp({ content: data.lang.wrong_id })
         } catch (e) {
             console.log(e)
         }

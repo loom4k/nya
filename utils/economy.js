@@ -8,21 +8,21 @@ const database = require('../database/mongoose')
  * @param {Int} amount
  */
 async function giveMoney(id, amount) {
-    let userData = await database.fetchUser(id)
+    const userData = await database.fetchUser(id)
 
     userData.currency = userData.currency + amount
     userData.save()
 }
 
 async function pay(id, amount) {
-    let userData = await database.fetchUser(id)
+    const userData = await database.fetchUser(id)
 
     if (Date.now() <= (userData.timeDoublePay + (24 * 60 * 60))) {
-        let amountToPay = amount * 2
+        const amountToPay = amount * 2
         await giveMoney(id, amountToPay)
         return amountToPay + " (2x bonus)"
     } else {
-        let amountToPay = amount
+        const amountToPay = amount
         await giveMoney(id, amountToPay)
         return amountToPay
 

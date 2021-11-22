@@ -13,7 +13,7 @@ module.exports = {
      */
     run: async(client, interaction, data) => {
         try {
-            let userLevel = await level(interaction.user.id)
+            const userLevel = await level(interaction.user.id)
             const embed = new MessageEmbed()
                 .setTitle(data.lang.profile.title.replace('{user}', interaction.user.username))
                 .setDescription(data.lang.profile.description.replace('{user}', interaction.user.username))

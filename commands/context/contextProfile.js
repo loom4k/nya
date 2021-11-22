@@ -12,9 +12,9 @@ module.exports = {
      * @param {String[]} args
      */
     run: async(client, interaction, data) => {
-        let user = await mongoose.fetchUser(interaction.targetId)
-        let member = await client.users.cache.get(interaction.targetId)
-        let userLevel = await level(user.id)
+        const user = await mongoose.fetchUser(interaction.targetId)
+        const member = await client.users.cache.get(interaction.targetId)
+        const userLevel = await level(user.id)
         const embed = new MessageEmbed()
             .setTitle(data.lang.profile.title.replace('{user}', member.username))
             .setDescription(data.lang.profile.description.replace('{user}', member.username))

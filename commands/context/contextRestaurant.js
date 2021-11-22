@@ -11,9 +11,9 @@ module.exports = {
      * @param {String[]} args
      */
     run: async(client, interaction, data) => {
-        let user = await mongoose.fetchUser(interaction.targetId)
-        let member = await client.users.cache.get(interaction.targetId)
-        let embed = new MessageEmbed()
+        const user = await mongoose.fetchUser(interaction.targetId)
+        const member = await client.users.cache.get(interaction.targetId)
+        const embed = new MessageEmbed()
             .setDescription(data.lang.restaurant.description.message)
             .setColor(client.colors.greeny)
         await embed

@@ -34,9 +34,7 @@ module.exports = class Util {
 
     capitalise(string) {
         return string
-            .split(" ")
-            .map((str) => str.slice(0, 1).toUpperCase() + str.slice(1))
-            .join(" ");
+            .replace(/\b\w/g, x => x.toUpperCase());
     }
 
     async * loadFiles(dir) {

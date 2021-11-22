@@ -15,12 +15,12 @@ module.exports = class extends Event {
     }
 
     async runCommand(interaction) {
-        let guildData = await this.client.Database.fetchGuild(interaction.guild.id)
-        let userData = await this.client.Database.fetchUser(interaction.member.id)
-        let langData = require(`../data/languages/client/${userData.lang}.json`)
-        let labelLang = require(`../data/languages/labels/${userData.lang}.json`)
+        const guildData = await this.client.Database.fetchGuild(interaction.guild.id)
+        const userData = await this.client.Database.fetchUser(interaction.member.id)
+        const langData = require(`../data/languages/client/${userData.lang}.json`)
+        const labelLang = require(`../data/languages/labels/${userData.lang}.json`)
 
-        let data = {}
+        const data = {}
         data.guild = guildData
         data.user = userData
         data.lang = langData
@@ -29,20 +29,20 @@ module.exports = class extends Event {
         const cmd = this.client.slashCommands.get(interaction.commandName)
         if (interaction.isCommand() || interaction.isContextMenu()) {
             try {
-                if (datadog == true) {
+                if (datadog === true) {
                     metrics.init({ apiKey: config.datadogApiKey, host: 'Nya', prefix: 'nya.' })
                     metrics.increment('interaction_ran');
                 }
 
-                let cmdCooldown = cmd.cooldown || 5
+                const cmdCooldown = cmd.cooldown || 5
                 const cooldown = cmdCooldown * 1000
                 if (cmdCooldown) {
                     if (this.client.Timeout.has(`${cmd.name}${interaction.user.id}`)) {
-                        let time1 = this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now()
-                        let value = calculate(time1, cmdCooldown, 10)
+                        const time1 = this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now()
+                        const value = calculate(time1, cmdCooldown, 10)
                         const bar = progressbar.filledBar(50, value / 200, 15)
 
-                        let cooldownEmbed = new MessageEmbed()
+                        const cooldownEmbed = new MessageEmbed()
                             .setTitle(data.lang.on_cooldown)
                             .setDescription(`${data.lang.ready_in.replace('{time}', ms(this.client.Timeout.get(cmd.name + interaction.user.id) - Date.now(), { long: true }))} \n\n${bar.toString()}`)
                             .setColor(this.client.colors.redish)
