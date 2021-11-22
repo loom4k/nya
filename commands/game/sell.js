@@ -20,7 +20,7 @@ module.exports = {
     run: async(client, interaction, data) => {
         try {
             const id = interaction.user.id
-            const name;
+            let name;
 
             const itemID = interaction.options.getString("itemid")
             const item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
