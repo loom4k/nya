@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
 const url = require("url");
 const path = require("path");
-let uniqid = require('uniqid');
+const uniqid = require('uniqid');
 const express = require("express");
 const passport = require("passport");
 const jsonconfig = require('../config.json');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const Strategy = require("passport-discord").Strategy;
+const { Strategy } = require("passport-discord");
 const config = require("../config");
 const ejs = require("ejs");
 
@@ -29,6 +29,12 @@ const secret = config.secret;
 const app = express();
 app.use(express.static('dashboard/static'));
 
+async function getUserLang(key) {
+    const user = await db.fetchUser(key)
+    const langFile = require(`../data/languages/dashboard/${user.lang}.json`);
+
+    return langFile;
+}
 
 module.exports = async(client) => {
     const dataDir = path.resolve(`${process.cwd()}${path.sep}dashboard`);
@@ -75,21 +81,21 @@ module.exports = async(client) => {
     app.get('/my', (req, res) => { res.redirect('/en/my') })
 
     const renderTemplate = (res, req, template, data = {}) => {
-        var hostname = req.headers.host;
-        var pathname = url.parse(req.url).pathname;
+        const hostname = req.headers.host;
+        const pathname = url.parse(req.url).pathname;
 
         const baseData = {
             https: "https://",
             domain: domain,
             bot: client,
-            hostname: hostname,
-            pathname: pathname,
+            hostname,
+            pathname,
             path: req.path,
             user: req.isAuthenticated() ? req.user : null,
             verification: config.verification,
             description: config.description,
             url: res,
-            req: req,
+            req,
             name: client.username,
             tag: client.tag,
         };
@@ -100,14 +106,6 @@ module.exports = async(client) => {
         if (req.isAuthenticated()) return next();
         req.session.backURL = req.url;
         res.redirect("/login");
-    }
-
-    async function getUserLang(key) {
-        let user = await db.fetchUser(key)
-        let lang = user.lang
-        let langFile = require(`../data/languages/dashboard/${lang}.json`)
-
-        return langFile
     }
 
     let funkyObject = {}
@@ -178,25 +176,21 @@ module.exports = async(client) => {
                 res.redirect("/");
             }
         } catch (err) {
-
             res.redirect('/')
         }
-
     });
 
     app.get("/:lang/my", checkAuth, async(req, res) => {
         i18n.setLocale(req, req.params.lang)
         const server = client.guilds.cache.get('904026551039967312');
-        let user = server.members.cache.has(req.user.id);
-
-        let lang = await getUserLang(req.user.id)
+        const user = server.members.cache.has(req.user.id);
+        const lang = await getUserLang(req.user.id)
 
         renderTemplate(res, req, "dashboard.ejs", {
             perms: Discord.Permissions,
             userExists: user,
-            lang: lang,
+            lang,
         });
-
     });
 
     app.get("/:lang/my/:guildID", checkAuth, async(req, res) => {
@@ -208,11 +202,10 @@ module.exports = async(client) => {
         if (!member.permissions.has("MANAGE_GUILD")) return res.redirect("/my");
 
         renderTemplate(res, req, "settings.ejs", {
-            guild: guild,
+            guild,
             alert: `Dashboard might be a little bit buggy due to discord intent problems.`,
             nickname: guild.me.nickname || guild.me.user.username,
         });
-
     });
 
     app.listen(config.port, null, null, () => console.log(`Dashboard up and running on port ${config.port}`))
