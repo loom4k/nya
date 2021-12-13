@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js")
 const items = require("../../utils/economy/items.js")
 const marketItems = require("../../utils/economy/marketItems")
+const winterItems = require("../../utils/economy/winterItems")
 const userSchema = require("../../database/schemas/User")
 
 module.exports = {
@@ -21,14 +22,24 @@ module.exports = {
         try {
             const itemID = interaction.options.getString("itemid")
             let amount = interaction.options.getInteger("amount")
-            const item = items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
+            const item = winterItems.find((val) => val.id.toLowerCase() === itemID) || items.find((val) => val.id.toLowerCase() === itemID) || marketItems.find((val) => val.id.toLowerCase() === itemID);
 
             if (amount <= 0 || !amount) {
                 amount = 1
             }
 
             if (item) {
-                const cost = item.price * amount
+                let cost = 0;
+                let sale = '';
+
+                if(Date.now() <= (data.user.timeSale + (30 * 60 * 60))) {
+                    cost = (item.price * amount) * 0.8
+                    sale = ' *(20% sale)*'
+                } else {
+                    cost = item.price * amount
+                    sale = ''
+                }
+
                 const userFound = await userSchema.findOne({ id: interaction.user.id });
                 if (!userFound) {
                     return interaction.followUp({ content: data.lang.store.not_enough_money })
@@ -75,7 +86,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                     .setColor(client.colors.greeny)
                     .setAuthor(data.lang.store.success.replace('{user}', interaction.user.tag), interaction.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(data.lang.store.bought.replace('{user}', interaction.user).replace('{amount}', amount.toLocaleString() + ' ' + item.name).replace('{cost}', cost.toLocaleString()))
+                    .setDescription(data.lang.store.bought.replace('{user}', interaction.user).replace('{amount}', amount.toLocaleString() + ' ' + item.name).replace('{cost}', cost.toLocaleString()) + `${sale}`)
 
                 interaction.followUp({ embeds: [embed] })
             } else return interaction.followUp({ content: data.lang.wrong_id })

@@ -22,17 +22,22 @@ module.exports = {
         try {
             const itemID = interaction.options.getString("item")
 
-            const itemFiles = await globPromise(
-                `${process.cwd()}/items/*.js`
-            );
+            try {
+                const itemFiles = await globPromise(
+                    `${process.cwd()}/items/*.js`
+                );
+                itemFiles.forEach((value) => {
+                    const file = require(value);
+                    if (!file.name) return;
+                    client.items.set(file.name, file);
+                });
+            } catch(e) {
+                return;
+            }
 
-            itemFiles.forEach((value) => {
-                const file = require(value);
-                if (!file.name) return;
-                client.items.set(file.name, file);
-            });
 
             const cmd = require(`../../items/${itemID}.js`)
+            if(!cmd) return;
             await cmd.run(client, interaction, data).catch(() => {})
         } catch (e) {
             console.log(e)

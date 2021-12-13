@@ -18,5 +18,6 @@ module.exports = mongoose.model('User', new mongoose.Schema({
     speciality: { type: String, default: 'Cod' },
     specialityLevel: { type: Number, default: 1 },
 
-    timeDoublePay: { type: Number, default: Date.now() }
+    timeDoublePay: { type: Number, default: Date.now() },
+    timeSale: { type: Number, default: Date.now() }
 }))

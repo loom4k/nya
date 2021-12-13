@@ -48,6 +48,7 @@
         "item_buy_indications": "You can procure yourself an item using /buy [item-id]",
         "convenience_title": "Convenience Store Items",
         "market_title": "Local Market Items",
+        "winter_title": "Winter Palace Items",
         "not_enough_money": "You are missing some coins to buy this item",
         "not_enough": "You don't have enough cod to buy {amount} {item}(s)",
         "success": "Successfull transaction by {user}",

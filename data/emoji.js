@@ -10,5 +10,8 @@ module.exports = {
     sushi: "<:sushi:904115791249703002>",
     temaki: "<:temaki:904115793317474324>",
     pan: "<:fryingpan:904473939089186887>",
-    cookie: "<:cookie:904475439043604500>"
+    cookie: "<:cookie:904475439043604500>",
+    pizza: "<:pizza:919248199091363912>",
+    snow_cloud: "<:snow_cloud:919253143718621204>",
+    snowball: "<:snowball:919254452513431592>"
 }
